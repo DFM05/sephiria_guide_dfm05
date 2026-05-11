@@ -1,0 +1,9 @@
+[project]
+name = "sephiria-dfm05-wiki"
+version = "0.1.0"
+description = "B站 DFM05 自制的《赛菲莉娅（Sephiria）》游戏 Wiki"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "streamlit>=1.35",
+]
