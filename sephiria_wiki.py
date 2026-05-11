@@ -1,11 +1,15 @@
 import streamlit as st
 
+from sidebar_links import show_sidebar_links
+
 
 st.set_page_config(
     page_title="赛菲莉娅 Sephiria 攻略站",
     page_icon="S",
     layout="wide",
 )
+
+show_sidebar_links()
 
 navigation = st.navigation(
     [
