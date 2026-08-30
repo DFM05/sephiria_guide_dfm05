@@ -5,44 +5,65 @@ def main() -> None:
     st.markdown(
         """
         <style>
+        :root {
+          --home-subtitle: #6b7280;
+          --home-border: #e5e7eb;
+          --home-intro-bg: #fafafa;
+          --home-card-bg: #ffffff;
+          --home-card-text: #4b5563;
+          --home-card-border-hover: #94a3b8;
+          --home-card-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+          --home-hint: #2563eb;
+        }
+        /* 只在 JS 探测出 Streamlit 真正是深色主题时，才切换变量值 */
+        body[data-theme="dark"] {
+          --home-subtitle: #9ca3af;
+          --home-border: #374151;
+          --home-intro-bg: #111827;
+          --home-card-bg: #1f2937;
+          --home-card-text: #cbd5e1;
+          --home-card-border-hover: #6b7280;
+          --home-card-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+          --home-hint: #60a5fa;
+        }
         .main-title {
             font-size: 2.6rem;
             font-weight: 700;
             margin-bottom: 0.2rem;
         }
         .subtitle {
-            color: #6b7280;
+            color: var(--home-subtitle);
             font-size: 1.05rem;
             margin-bottom: 1.5rem;
         }
         .intro-box {
-            border: 1px solid #e5e7eb;
+            border: 1px solid var(--home-border);
             border-radius: 8px;
             padding: 1.2rem 1.4rem;
-            background: #fafafa;
+            background: var(--home-intro-bg);
             margin-bottom: 1.5rem;
         }
         .section-card {
-            border: 1px solid #e5e7eb;
+            border: 1px solid var(--home-border);
             border-radius: 8px;
             padding: 1rem 1.1rem;
             min-height: 140px;
-            background: #ffffff;
+            background: var(--home-card-bg);
         }
         .section-card-link {
             display: block;
-            border: 1px solid #e5e7eb;
+            border: 1px solid var(--home-border);
             border-radius: 8px;
             padding: 1rem 1.1rem;
             min-height: 140px;
-            background: #ffffff;
+            background: var(--home-card-bg);
             color: inherit;
             text-decoration: none;
             transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
         }
         .section-card-link:hover {
-            border-color: #94a3b8;
-            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+            border-color: var(--home-card-border-hover);
+            box-shadow: var(--home-card-shadow);
             color: inherit;
             text-decoration: none;
             transform: translateY(-1px);
@@ -52,7 +73,7 @@ def main() -> None:
             margin: 0 0 0.5rem 0;
         }
         .section-card p {
-            color: #4b5563;
+            color: var(--home-card-text);
             margin: 0;
             line-height: 1.7;
         }
@@ -61,16 +82,65 @@ def main() -> None:
             margin: 0 0 0.5rem 0;
         }
         .section-card-link p {
-            color: #4b5563;
+            color: var(--home-card-text);
             margin: 0;
             line-height: 1.7;
         }
         .card-hint {
-            color: #2563eb;
+            color: var(--home-hint);
             font-size: 0.95rem;
             margin-top: 0.75rem;
         }
+        .update-banner {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            border: 1px solid var(--home-border);
+            border-radius: 8px;
+            padding: 0.7rem 1.1rem;
+            background: var(--home-intro-bg);
+            color: inherit;
+            text-decoration: none;
+            margin-bottom: 1.2rem;
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
+        }
+        .update-banner:hover {
+            border-color: var(--home-card-border-hover);
+            box-shadow: var(--home-card-shadow);
+            color: inherit;
+            text-decoration: none;
+        }
+        .update-banner .banner-badge {
+            flex-shrink: 0;
+            background: var(--home-hint);
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 999px;
+            padding: 0.15rem 0.7rem;
+        }
+        .update-banner .banner-text {
+            color: var(--home-card-text);
+            font-size: 0.98rem;
+        }
+        .update-banner .banner-go {
+            margin-left: auto;
+            flex-shrink: 0;
+            color: var(--home-hint);
+            font-size: 0.95rem;
+        }
         </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    st.markdown(
+        """
+        <a class="update-banner" href="/changelog" target="_self">
+        <span class="banner-badge">公告</span>
+        <span class="banner-text">2026-08-30：1.0.30 排行榜 / 武器所属流派索引 / 单独武器解析 等大量更新上线</span>
+        <span class="banner-go">查看更新公告 →</span>
+        </a>
         """,
         unsafe_allow_html=True,
     )
@@ -98,7 +168,7 @@ def main() -> None:
 
     st.subheader("内容分类")
 
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col3 = st.columns(3)
 
     with col1:
         st.markdown(
@@ -136,6 +206,8 @@ def main() -> None:
             unsafe_allow_html=True,
         )
 
+    col4, col5 = st.columns(2)
+
     with col4:
         st.markdown(
             """
@@ -143,6 +215,18 @@ def main() -> None:
             <h3>流派解析</h3>
             <p>整理不同流派的核心思路、关键武器、常用搭配和成型路线。</p>
             <div class="card-hint">查看各大流派解析</div>
+            </a>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    with col5:
+        st.markdown(
+            """
+            <a class="section-card-link" href="/presets" target="_self">
+            <h3>预设合集</h3>
+            <p>收集可直接复制使用的预设码，按武器、流派和玩法方向整理。</p>
+            <div class="card-hint">查看可复制预设</div>
             </a>
             """,
             unsafe_allow_html=True,

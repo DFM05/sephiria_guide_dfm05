@@ -1,0 +1,852 @@
+[
+  {
+    "label": "武器排行榜 1.0.30 总榜",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/1武器排行榜/1.0.30.png",
+    "target": "assets/wiki/weapon_rankings/1.0.30/ranking.png"
+  },
+  {
+    "label": "武器所属流派索引 剑盾",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/0所有武器所属流派索引/1剑盾所属流派索引.png",
+    "target": "assets/wiki/build_analysis/weapon_school_index/sword_shield.png"
+  },
+  {
+    "label": "武器所属流派索引 大剑",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/0所有武器所属流派索引/2大剑所属流派索引.png",
+    "target": "assets/wiki/build_analysis/weapon_school_index/greatsword.png"
+  },
+  {
+    "label": "武器所属流派索引 匕首",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/0所有武器所属流派索引/3匕首所属流派索引.png",
+    "target": "assets/wiki/build_analysis/weapon_school_index/dagger.png"
+  },
+  {
+    "label": "武器所属流派索引 弩",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/0所有武器所属流派索引/4弩所属流派索引.png",
+    "target": "assets/wiki/build_analysis/weapon_school_index/crossbow.png"
+  },
+  {
+    "label": "武器所属流派索引 武士刀",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/0所有武器所属流派索引/5武士刀所属流派索引.png",
+    "target": "assets/wiki/build_analysis/weapon_school_index/katana.png"
+  },
+  {
+    "label": "武器所属流派索引 长棍",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/0所有武器所属流派索引/6长棍所属流派索引.png",
+    "target": "assets/wiki/build_analysis/weapon_school_index/staff.png"
+  },
+  {
+    "label": "武器排行榜 0.12.0 总榜",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/1武器排行榜/0.12.0.png",
+    "target": "assets/wiki/weapon_rankings/0.12.0/ranking.png"
+  },
+  {
+    "label": "武器排行榜 0.11.6 总榜",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/武器排行榜/0.11.6.png",
+    "target": "assets/wiki/weapon_rankings/0.11.6/ranking.png"
+  },
+  {
+    "label": "武器排行榜 0.11.6 T0-T1",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/武器排行榜/0.11.6武器排行榜第三期（T0-T1）.png",
+    "target": "assets/wiki/weapon_rankings/0.11.6/analysis_t0_t1.png"
+  },
+  {
+    "label": "武器排行榜 0.11.6 T1.5",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/武器排行榜/0.11.6武器排行榜第2期（T1.5）.png",
+    "target": "assets/wiki/weapon_rankings/0.11.6/analysis_t1_5.png"
+  },
+  {
+    "label": "武器排行榜 0.11.6 T2-T4",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/武器排行榜/0.11.6武器排行榜第一期（T2-T4）.png",
+    "target": "assets/wiki/weapon_rankings/0.11.6/analysis_t2_t4.png"
+  },
+  {
+    "label": "武器排行榜 0.10.17",
+    "source": "D:/self-made-game-related/Sephiria/武器排行榜/0.10.17.png",
+    "target": "assets/wiki/weapon_rankings/versions/0_10_17.png"
+  },
+  {
+    "label": "武器排行榜 0.10.8",
+    "source": "D:/self-made-game-related/Sephiria/武器排行榜/0.10.8.png",
+    "target": "assets/wiki/weapon_rankings/versions/0_10_8.png"
+  },
+  {
+    "label": "武器排行榜 0.9.8",
+    "source": "D:/self-made-game-related/Sephiria/武器排行榜/0.9.8.png",
+    "target": "assets/wiki/weapon_rankings/versions/0_9_8.png"
+  },
+  {
+    "label": "武器排行榜 0.9.6",
+    "source": "D:/self-made-game-related/Sephiria/武器排行榜/0.9.6.png",
+    "target": "assets/wiki/weapon_rankings/versions/0_9_6.png"
+  },
+  {
+    "label": "武器排行榜 0.9正式版",
+    "source": "D:/self-made-game-related/Sephiria/武器排行榜/0.9正式版.png",
+    "target": "assets/wiki/weapon_rankings/versions/0_9_release.png"
+  },
+  {
+    "label": "武器排行榜 0.9测试版",
+    "source": "D:/self-made-game-related/Sephiria/武器排行榜/0.9测试版.png",
+    "target": "assets/wiki/weapon_rankings/versions/0_9_beta.png"
+  },
+  {
+    "label": "武器排行榜 0.8",
+    "source": "D:/self-made-game-related/Sephiria/武器排行榜/0.8.png",
+    "target": "assets/wiki/weapon_rankings/versions/0_8.png"
+  },
+  {
+    "label": "武器解析 剑盾",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/2武器解析/1剑盾全改造一图流.png",
+    "target": "assets/wiki/weapon_analysis/0.11/sword_shield.png"
+  },
+  {
+    "label": "武器解析 大剑",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/2武器解析/2大剑全改造一图流.png",
+    "target": "assets/wiki/weapon_analysis/0.11/greatsword.png"
+  },
+  {
+    "label": "武器解析 匕首",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/2武器解析/3匕首全改造一图流.png",
+    "target": "assets/wiki/weapon_analysis/0.11/dagger.png"
+  },
+  {
+    "label": "武器解析 弩",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/2武器解析/4弩全改造一图流.png",
+    "target": "assets/wiki/weapon_analysis/0.11/crossbow.png"
+  },
+  {
+    "label": "武器解析 武士刀",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/2武器解析/5武士刀全改造一图流.png",
+    "target": "assets/wiki/weapon_analysis/0.11/katana.png"
+  },
+  {
+    "label": "武器解析 长棍",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/2武器解析/6长棍全改造一图流.png",
+    "target": "assets/wiki/weapon_analysis/0.11/staff.png"
+  },
+  {
+    "label": "通用连击神器 无连击",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/1通用连击神器/1无连击.png",
+    "target": "assets/wiki/build_analysis/general_no_combo.png"
+  },
+  {
+    "label": "通用连击神器 风之歌",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/1通用连击神器/2风之歌.png",
+    "target": "assets/wiki/build_analysis/wind_song.png"
+  },
+  {
+    "label": "通用连击神器 精密",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/1通用连击神器/3精密.png",
+    "target": "assets/wiki/build_analysis/precision.png"
+  },
+  {
+    "label": "通用连击神器 元素&诅咒&谈判&炼金",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/1通用连击神器/4元素&诅咒&谈判&炼金.png",
+    "target": "assets/wiki/build_analysis/element_curse_negotiation_alchemy.png"
+  },
+  {
+    "label": "通用连击神器 神秘",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/1通用连击神器/5神秘.png",
+    "target": "assets/wiki/build_analysis/mystic.png"
+  },
+  {
+    "label": "通用连击神器 学院",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/1通用连击神器/6学院.png",
+    "target": "assets/wiki/build_analysis/academy.png"
+  },
+  {
+    "label": "通用连击神器 通用增伤",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/1通用连击神器/7通用增伤.png",
+    "target": "assets/wiki/build_analysis/general_damage_boost.png"
+  },
+  {
+    "label": "通用连击神器 通用生存&功能神器",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/1通用连击神器/8通用生存&功能神器.png",
+    "target": "assets/wiki/build_analysis/general_survival_utility.png"
+  },
+  {
+    "label": "通用连击神器 所有消耗MP武器的MP补足方法",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/1通用连击神器/9所有消耗MP武器的MP补足方法.png",
+    "target": "assets/wiki/build_analysis/mp_supply_methods_all_mp_weapons.png"
+  },
+  {
+    "label": "物理流派 坚固",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/2物理流派/0坚固.png",
+    "target": "assets/wiki/build_analysis/sturdy.png"
+  },
+  {
+    "label": "物理流派 物理剑盾",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/2物理流派/1物理剑盾.png",
+    "target": "assets/wiki/build_analysis/physical_sword_shield.png"
+  },
+  {
+    "label": "物理流派 物理大剑",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/2物理流派/2物理大剑.png",
+    "target": "assets/wiki/build_analysis/physical_greatsword.png"
+  },
+  {
+    "label": "物理流派 物理匕首",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/2物理流派/3物理匕首.png",
+    "target": "assets/wiki/build_analysis/physical_dagger.png"
+  },
+  {
+    "label": "物理流派 物理弩",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/2物理流派/4物理弩.png",
+    "target": "assets/wiki/build_analysis/physical_crossbow.png"
+  },
+  {
+    "label": "物理流派 物理武士刀",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/2物理流派/5物理武士刀.png",
+    "target": "assets/wiki/build_analysis/physical_katana.png"
+  },
+  {
+    "label": "物理流派 物理长棍",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/2物理流派/6物理长棍.png",
+    "target": "assets/wiki/build_analysis/physical_staff.png"
+  },
+  {
+    "label": "三元素流派 余烬",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/3三元素流派/1余烬一图解析.png",
+    "target": "assets/wiki/build_analysis/ember.png"
+  },
+  {
+    "label": "三元素流派 太阳剑",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/3三元素流派/2太阳剑一图解析.png",
+    "target": "assets/wiki/build_analysis/sun_sword.png"
+  },
+  {
+    "label": "三元素流派 冰川",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/3三元素流派/3冰川一图解析.png",
+    "target": "assets/wiki/build_analysis/glacier.png"
+  },
+  {
+    "label": "三元素流派 冰霜武具",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/3三元素流派/4冰霜武具一图解析.png",
+    "target": "assets/wiki/build_analysis/frost_armament.png"
+  },
+  {
+    "label": "三元素流派 魔法科技",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/3三元素流派/5魔法科技一图解析.png",
+    "target": "assets/wiki/build_analysis/magic_tech.png"
+  },
+  {
+    "label": "三元素流派 暴风云",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/3三元素流派/6乌云一图解析.png",
+    "target": "assets/wiki/build_analysis/storm_cloud.png"
+  },
+  {
+    "label": "其他流派 同伴",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/4其他流派/1同伴一图解析.png",
+    "target": "assets/wiki/build_analysis/companion.png"
+  },
+  {
+    "label": "其他流派 行星",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/4其他流派/2行星一图流解析.png",
+    "target": "assets/wiki/build_analysis/planet.png"
+  },
+  {
+    "label": "其他流派 湖泊",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/4其他流派/3湖泊一图流解析.png",
+    "target": "assets/wiki/build_analysis/lake.png"
+  },
+  {
+    "label": "其他流派 固伤",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/4其他流派/4固伤一图解析.png",
+    "target": "assets/wiki/build_analysis/fixed_damage.png"
+  },
+  {
+    "label": "其他流派 魔法书",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/4其他流派/7魔法书一图流解析.png",
+    "target": "assets/wiki/build_analysis/magic_book.png"
+  },
+  {
+    "label": "其他流派 守护",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/4其他流派/5守护一图流解析.png",
+    "target": "assets/wiki/build_analysis/guardian.png"
+  },
+  {
+    "label": "其他流派 影子",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/4其他流派/6影子一图流解析.png",
+    "target": "assets/wiki/build_analysis/shadow.png"
+  },
+  {
+    "label": "其他流派 无暴（鹿）坚风",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/4其他流派/8无暴-坚固风之歌.png",
+    "target": "assets/wiki/build_analysis/no_crit_sturdy_wind_song.png"
+  },
+  {
+    "label": "其他流派 无暴（鹿）其他",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/4流派解析/4其他流派/9无暴-其他.png",
+    "target": "assets/wiki/build_analysis/no_crit_other.png"
+  },
+  {
+    "label": "单独武器/流派解析 内波拉克斯",
+    "source": "D:/self-made-game-related/Sephiria/直接入驻攻略站攻略合集/云棍内波拉克斯详解By@Eden_T.pdf",
+    "target": "assets/wiki/build_analysis/single_weapon/nepolax.pdf"
+  },
+  {
+    "label": "单独武器/流派解析 等离子炙热之刃",
+    "source": "D:/self-made-game-related/Sephiria/直接入驻攻略站攻略合集/等离子火匕攻略By@等离子大王.pdf",
+    "target": "assets/wiki/build_analysis/single_weapon/plasma_blazing_blade.pdf"
+  },
+  {
+    "label": "单独武器/流派解析 图书馆幽灵封印研究会第2型",
+    "source": "D:/self-made-game-related/Sephiria/直接入驻攻略站攻略合集/图书馆幽灵封印研究会第2型攻略By@梅子黄时雨.jpg",
+    "target": "assets/wiki/build_analysis/single_weapon/library_ghost_seal_type2.jpg"
+  },
+  {
+    "label": "单独武器/流派解析 裁判官",
+    "source": "D:/self-made-game-related/Sephiria/直接入驻攻略站攻略合集/裁判官By@DFM05.png",
+    "target": "assets/wiki/build_analysis/single_weapon/judicator.png"
+  },
+  {
+    "label": "单独武器/流派解析 精灵融合杖伊洛妮卡",
+    "source": "D:/self-made-game-related/Sephiria/直接入驻攻略站攻略合集/精灵融合杖伊洛妮卡By@DFM05.png",
+    "target": "assets/wiki/build_analysis/single_weapon/elf_fusion_staff_elonieca.png"
+  },
+  {
+    "label": "单独武器/流派解析 书库之阳亚达玛的誓约",
+    "source": "D:/self-made-game-related/Sephiria/直接入驻攻略站攻略合集/书库之阳亚达玛By@h9Mk.docx",
+    "target": "assets/wiki/build_analysis/single_weapon/library_sun_adama.docx"
+  },
+  {
+    "label": "游戏基础 初始神器",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/游戏基础&机制解析/神器&石板解锁/初始神器.png",
+    "target": "assets/wiki/game_basics/unlocks/initial_artifacts.png"
+  },
+  {
+    "label": "游戏基础 非初始神器&解锁方法",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/游戏基础&机制解析/神器&石板解锁/非初始神器&解锁方法（待补全）.png",
+    "target": "assets/wiki/game_basics/unlocks/non_initial_artifacts_unlocks.png"
+  },
+  {
+    "label": "游戏基础 命运刻印解锁神器",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/游戏基础&机制解析/神器&石板解锁/命运刻印解锁神器.png",
+    "target": "assets/wiki/game_basics/unlocks/fate_mark_artifacts.png"
+  },
+  {
+    "label": "游戏基础 击败boss物品解锁",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/游戏基础&机制解析/神器&石板解锁/击败boss物品解锁.png",
+    "target": "assets/wiki/game_basics/unlocks/boss_drop_unlocks.png"
+  },
+  {
+    "label": "游戏基础 石板&非初始石板解锁",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/游戏基础&机制解析/神器&石板解锁/石板&非初始石板解锁.png",
+    "target": "assets/wiki/game_basics/unlocks/tablets_unlocks.png"
+  },
+  {
+    "label": "游戏基础 天赋（才能）",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/游戏基础&机制解析/游戏基础/天赋（才能）解析.png",
+    "target": "assets/wiki/game_basics/basics/talent.png"
+  },
+  {
+    "label": "游戏基础 奇迹（树根）",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/游戏基础&机制解析/游戏基础/奇迹（树根）解析.png",
+    "target": "assets/wiki/game_basics/basics/miracle_root.png"
+  },
+  {
+    "label": "武器图标 剑盾 1001星光闪烁",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/1标准剑盾/1001星光闪烁.png",
+    "target": "assets/wiki/presets/weapons/sword_shield/1001星光闪烁.png"
+  },
+  {
+    "label": "武器图标 剑盾 1002冰冷愤怒",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/1标准剑盾/1002冰冷愤怒.png",
+    "target": "assets/wiki/presets/weapons/sword_shield/1002冰冷愤怒.png"
+  },
+  {
+    "label": "武器图标 剑盾 1003岩石剑",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/1标准剑盾/1003岩石剑.png",
+    "target": "assets/wiki/presets/weapons/sword_shield/1003岩石剑.png"
+  },
+  {
+    "label": "武器图标 剑盾 1004灰烬飘扬",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/1标准剑盾/1004灰烬飘扬.png",
+    "target": "assets/wiki/presets/weapons/sword_shield/1004灰烬飘扬.png"
+  },
+  {
+    "label": "武器图标 剑盾 1005无垠原野",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/1标准剑盾/1005无垠原野.png",
+    "target": "assets/wiki/presets/weapons/sword_shield/1005无垠原野.png"
+  },
+  {
+    "label": "武器图标 剑盾 1006收紧的恐惧",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/1标准剑盾/1006收紧的恐惧.png",
+    "target": "assets/wiki/presets/weapons/sword_shield/1006收紧的恐惧.png"
+  },
+  {
+    "label": "武器图标 剑盾 1007归来守护",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/1标准剑盾/1007归来守护.png",
+    "target": "assets/wiki/presets/weapons/sword_shield/1007归来守护.png"
+  },
+  {
+    "label": "武器图标 剑盾 1008胡萝卜剑",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/1标准剑盾/1008胡萝卜剑.png",
+    "target": "assets/wiki/presets/weapons/sword_shield/1008胡萝卜剑.png"
+  },
+  {
+    "label": "武器图标 剑盾 1009葱根剑",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/1标准剑盾/1009葱根剑.png",
+    "target": "assets/wiki/presets/weapons/sword_shield/1009葱根剑.png"
+  },
+  {
+    "label": "武器图标 剑盾 1010闪光的细剑",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/1标准剑盾/1010闪光的细剑.png",
+    "target": "assets/wiki/presets/weapons/sword_shield/1010闪光的细剑.png"
+  },
+  {
+    "label": "武器图标 剑盾 1011火焰凝视",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/1标准剑盾/1011火焰凝视.png",
+    "target": "assets/wiki/presets/weapons/sword_shield/1011火焰凝视.png"
+  },
+  {
+    "label": "武器图标 剑盾 1012冰之呼吸",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/1标准剑盾/1012冰之呼吸.png",
+    "target": "assets/wiki/presets/weapons/sword_shield/1012冰之呼吸.png"
+  },
+  {
+    "label": "武器图标 剑盾 1013雷电之翼",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/1标准剑盾/1013雷电之翼.png",
+    "target": "assets/wiki/presets/weapons/sword_shield/1013雷电之翼.png"
+  },
+  {
+    "label": "武器图标 剑盾 1014冰川之刃",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/1标准剑盾/1014冰川之刃.png",
+    "target": "assets/wiki/presets/weapons/sword_shield/1014冰川之刃.png"
+  },
+  {
+    "label": "武器图标 剑盾 1015暴风雪的前奏",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/1标准剑盾/1015暴风雪的前奏.png",
+    "target": "assets/wiki/presets/weapons/sword_shield/1015暴风雪的前奏.png"
+  },
+  {
+    "label": "武器图标 剑盾 1016弩炮剑",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/1标准剑盾/1016弩炮剑.png",
+    "target": "assets/wiki/presets/weapons/sword_shield/1016弩炮剑.png"
+  },
+  {
+    "label": "武器图标 剑盾 1017超导体",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/1标准剑盾/1017超导体.png",
+    "target": "assets/wiki/presets/weapons/sword_shield/1017超导体.png"
+  },
+  {
+    "label": "武器图标 剑盾 1018索利斯使命",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/1标准剑盾/1018索利斯使命.png",
+    "target": "assets/wiki/presets/weapons/sword_shield/1018索利斯使命.png"
+  },
+  {
+    "label": "武器图标 剑盾 1019食火獬豸",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/1标准剑盾/1019食火獬豸.png",
+    "target": "assets/wiki/presets/weapons/sword_shield/1019食火獬豸.png"
+  },
+  {
+    "label": "武器图标 大剑 2001无视",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/2钢铁巨剑/2001无视.png",
+    "target": "assets/wiki/presets/weapons/greatsword/2001无视.png"
+  },
+  {
+    "label": "武器图标 大剑 2002爱的眼神",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/2钢铁巨剑/2002爱的眼神.png",
+    "target": "assets/wiki/presets/weapons/greatsword/2002爱的眼神.png"
+  },
+  {
+    "label": "武器图标 大剑 2003黑铁戟",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/2钢铁巨剑/2003黑铁戟.png",
+    "target": "assets/wiki/presets/weapons/greatsword/2003黑铁戟.png"
+  },
+  {
+    "label": "武器图标 大剑 2004短暂自责",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/2钢铁巨剑/2004短暂自责.png",
+    "target": "assets/wiki/presets/weapons/greatsword/2004短暂自责.png"
+  },
+  {
+    "label": "武器图标 大剑 2005红蛇碎击",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/2钢铁巨剑/2005红蛇碎击.png",
+    "target": "assets/wiki/presets/weapons/greatsword/2005红蛇碎击.png"
+  },
+  {
+    "label": "武器图标 大剑 2006索利斯·西涅里斯",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/2钢铁巨剑/2006索利斯·西涅里斯.png",
+    "target": "assets/wiki/presets/weapons/greatsword/2006索利斯·西涅里斯.png"
+  },
+  {
+    "label": "武器图标 大剑 2007荆棘棒",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/2钢铁巨剑/2007荆棘棒.png",
+    "target": "assets/wiki/presets/weapons/greatsword/2007荆棘棒.png"
+  },
+  {
+    "label": "武器图标 大剑 2008顽皮的恶作剧",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/2钢铁巨剑/2008顽皮的恶作剧.png",
+    "target": "assets/wiki/presets/weapons/greatsword/2008顽皮的恶作剧.png"
+  },
+  {
+    "label": "武器图标 大剑 2009吱嘎的脊椎",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/2钢铁巨剑/2009吱嘎的脊椎.png",
+    "target": "assets/wiki/presets/weapons/greatsword/2009吱嘎的脊椎.png"
+  },
+  {
+    "label": "武器图标 大剑 2010万年寒霜巨剑",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/2钢铁巨剑/2010万年寒霜巨剑.png",
+    "target": "assets/wiki/presets/weapons/greatsword/2010万年寒霜巨剑.png"
+  },
+  {
+    "label": "武器图标 大剑 2011冰柱剑",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/2钢铁巨剑/2011冰柱剑.png",
+    "target": "assets/wiki/presets/weapons/greatsword/2011冰柱剑.png"
+  },
+  {
+    "label": "武器图标 大剑 2012驱魔的重剑",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/2钢铁巨剑/2012驱魔的重剑.png",
+    "target": "assets/wiki/presets/weapons/greatsword/2012驱魔的重剑.png"
+  },
+  {
+    "label": "武器图标 大剑 2013深红漩涡",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/2钢铁巨剑/2013深红漩涡.png",
+    "target": "assets/wiki/presets/weapons/greatsword/2013深红漩涡.png"
+  },
+  {
+    "label": "武器图标 大剑 2014裁判官",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/2钢铁巨剑/2014裁判官.png",
+    "target": "assets/wiki/presets/weapons/greatsword/2014裁判官.png"
+  },
+  {
+    "label": "武器图标 大剑 2015电击大剑【E3G】",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/2钢铁巨剑/2015电击大剑【E3G】.png",
+    "target": "assets/wiki/presets/weapons/greatsword/2015电击大剑【E3G】.png"
+  },
+  {
+    "label": "武器图标 大剑 2016电击大剑【S3G】",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/2钢铁巨剑/2016电击大剑【S3G】.png",
+    "target": "assets/wiki/presets/weapons/greatsword/2016电击大剑【S3G】.png"
+  },
+  {
+    "label": "武器图标 大剑 2017幻术师的遗产",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/2钢铁巨剑/2017幻术师的遗产.png",
+    "target": "assets/wiki/presets/weapons/greatsword/2017幻术师的遗产.png"
+  },
+  {
+    "label": "武器图标 大剑 2018太初形态",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/2钢铁巨剑/2018太初形态.png",
+    "target": "assets/wiki/presets/weapons/greatsword/2018太初形态.png"
+  },
+  {
+    "label": "武器图标 大剑 2019拉扎里恩",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/2钢铁巨剑/2019拉扎里恩.png",
+    "target": "assets/wiki/presets/weapons/greatsword/2019拉扎里恩.png"
+  },
+  {
+    "label": "武器图标 匕首 3001无光之刃",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/3短剑/3001无光之刃.png",
+    "target": "assets/wiki/presets/weapons/dagger/3001无光之刃.png"
+  },
+  {
+    "label": "武器图标 匕首 3002绝对向往",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/3短剑/3002绝对向往.png",
+    "target": "assets/wiki/presets/weapons/dagger/3002绝对向往.png"
+  },
+  {
+    "label": "武器图标 匕首 3003爬行的绝望",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/3短剑/3003爬行的绝望.png",
+    "target": "assets/wiki/presets/weapons/dagger/3003爬行的绝望.png"
+  },
+  {
+    "label": "武器图标 匕首 3004艰难实验",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/3短剑/3004艰难实验.png",
+    "target": "assets/wiki/presets/weapons/dagger/3004艰难实验.png"
+  },
+  {
+    "label": "武器图标 匕首 3005炙热之刃",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/3短剑/3005炙热之刃.png",
+    "target": "assets/wiki/presets/weapons/dagger/3005炙热之刃.png"
+  },
+  {
+    "label": "武器图标 匕首 3006索利斯·因贝尔",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/3短剑/3006索利斯·因贝尔.png",
+    "target": "assets/wiki/presets/weapons/dagger/3006索利斯·因贝尔.png"
+  },
+  {
+    "label": "武器图标 匕首 3007笼罩的阴云",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/3短剑/3007笼罩的阴云.png",
+    "target": "assets/wiki/presets/weapons/dagger/3007笼罩的阴云.png"
+  },
+  {
+    "label": "武器图标 匕首 3008雷电之怒",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/3短剑/3008雷电之怒.png",
+    "target": "assets/wiki/presets/weapons/dagger/3008雷电之怒.png"
+  },
+  {
+    "label": "武器图标 匕首 3009福寿草",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/3短剑/3009福寿草.png",
+    "target": "assets/wiki/presets/weapons/dagger/3009福寿草.png"
+  },
+  {
+    "label": "武器图标 匕首 3010黑幕",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/3短剑/3010黑幕.png",
+    "target": "assets/wiki/presets/weapons/dagger/3010黑幕.png"
+  },
+  {
+    "label": "武器图标 匕首 3011无尽沉浸",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/3短剑/3011无尽沉浸.png",
+    "target": "assets/wiki/presets/weapons/dagger/3011无尽沉浸.png"
+  },
+  {
+    "label": "武器图标 匕首 3012模仿之书",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/3短剑/3012模仿之书.png",
+    "target": "assets/wiki/presets/weapons/dagger/3012模仿之书.png"
+  },
+  {
+    "label": "武器图标 匕首 3013学院魔法剑-解放",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/3短剑/3013学院魔法剑-解放.png",
+    "target": "assets/wiki/presets/weapons/dagger/3013学院魔法剑-解放.png"
+  },
+  {
+    "label": "武器图标 匕首 3014冷冻公鱼",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/3短剑/3014冷冻公鱼.png",
+    "target": "assets/wiki/presets/weapons/dagger/3014冷冻公鱼.png"
+  },
+  {
+    "label": "武器图标 匕首 3015德里法",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/3短剑/3015德里法.png",
+    "target": "assets/wiki/presets/weapons/dagger/3015德里法.png"
+  },
+  {
+    "label": "武器图标 弩 4001重型弩：加速核心",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/4重型弩/4001重型弩：加速核心.png",
+    "target": "assets/wiki/presets/weapons/crossbow/4001重型弩：加速核心.png"
+  },
+  {
+    "label": "武器图标 弩 4002弩：双子",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/4重型弩/4002弩：双子.png",
+    "target": "assets/wiki/presets/weapons/crossbow/4002弩：双子.png"
+  },
+  {
+    "label": "武器图标 弩 4003赏金猎人",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/4重型弩/4003赏金猎人.png",
+    "target": "assets/wiki/presets/weapons/crossbow/4003赏金猎人.png"
+  },
+  {
+    "label": "武器图标 弩 4004重型弩：火药合成",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/4重型弩/4004重型弩：火药合成.png",
+    "target": "assets/wiki/presets/weapons/crossbow/4004重型弩：火药合成.png"
+  },
+  {
+    "label": "武器图标 弩 4005重型弩：爆炸装置",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/4重型弩/4005重型弩：爆炸装置.png",
+    "target": "assets/wiki/presets/weapons/crossbow/4005重型弩：爆炸装置.png"
+  },
+  {
+    "label": "武器图标 弩 4006藤壶",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/4重型弩/4006藤壶.png",
+    "target": "assets/wiki/presets/weapons/crossbow/4006藤壶.png"
+  },
+  {
+    "label": "武器图标 弩 4007重型弩：连发装置",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/4重型弩/4007重型弩：连发装置.png",
+    "target": "assets/wiki/presets/weapons/crossbow/4007重型弩：连发装置.png"
+  },
+  {
+    "label": "武器图标 弩 4008重型弩：配备制导模块",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/4重型弩/4008重型弩：配备制导模块.png",
+    "target": "assets/wiki/presets/weapons/crossbow/4008重型弩：配备制导模块.png"
+  },
+  {
+    "label": "武器图标 弩 4009迷你加农炮",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/4重型弩/4009迷你加农炮.png",
+    "target": "assets/wiki/presets/weapons/crossbow/4009迷你加农炮.png"
+  },
+  {
+    "label": "武器图标 弩 4010索利斯·尤巴尔",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/4重型弩/4010索利斯·尤巴尔.png",
+    "target": "assets/wiki/presets/weapons/crossbow/4010索利斯·尤巴尔.png"
+  },
+  {
+    "label": "武器图标 弩 4011重型弩：标记稳定化",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/4重型弩/4011重型弩：标记稳定化.png",
+    "target": "assets/wiki/presets/weapons/crossbow/4011重型弩：标记稳定化.png"
+  },
+  {
+    "label": "武器图标 弩 4012重型弩：聚云者",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/4重型弩/4012重型弩：聚云者.png",
+    "target": "assets/wiki/presets/weapons/crossbow/4012重型弩：聚云者.png"
+  },
+  {
+    "label": "武器图标 弩 4013迷你机枪",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/4重型弩/4013迷你机枪.png",
+    "target": "assets/wiki/presets/weapons/crossbow/4013迷你机枪.png"
+  },
+  {
+    "label": "武器图标 弩 4014重型弩：速冻结晶",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/4重型弩/4014重型弩：速冻结晶.png",
+    "target": "assets/wiki/presets/weapons/crossbow/4014重型弩：速冻结晶.png"
+  },
+  {
+    "label": "武器图标 弩 4015重型弩：扩展装置",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/4重型弩/4015重型弩：扩展装置.png",
+    "target": "assets/wiki/presets/weapons/crossbow/4015重型弩：扩展装置.png"
+  },
+  {
+    "label": "武器图标 弩 4016卡里姆的形象",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/4重型弩/4016卡里姆的形象.png",
+    "target": "assets/wiki/presets/weapons/crossbow/4016卡里姆的形象.png"
+  },
+  {
+    "label": "武器图标 弩 4017紫甲蜂弩",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/4重型弩/4017紫甲蜂弩.png",
+    "target": "assets/wiki/presets/weapons/crossbow/4017紫甲蜂弩.png"
+  },
+  {
+    "label": "武器图标 弩 4018XRA-9",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/4重型弩/4018XRA-9.png",
+    "target": "assets/wiki/presets/weapons/crossbow/4018XRA-9.png"
+  },
+  {
+    "label": "武器图标 武士刀 5001名刀【池子村正】",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/5刀/5001名刀【池子村正】.png",
+    "target": "assets/wiki/presets/weapons/katana/5001名刀【池子村正】.png"
+  },
+  {
+    "label": "武器图标 武士刀 5002怪刀-毫羽",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/5刀/5002怪刀-毫羽.png",
+    "target": "assets/wiki/presets/weapons/katana/5002怪刀-毫羽.png"
+  },
+  {
+    "label": "武器图标 武士刀 5003炽焰荷尔巴努苏",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/5刀/5003炽焰荷尔巴努苏.png",
+    "target": "assets/wiki/presets/weapons/katana/5003炽焰荷尔巴努苏.png"
+  },
+  {
+    "label": "武器图标 武士刀 5004海蒂",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/5刀/5004海蒂.png",
+    "target": "assets/wiki/presets/weapons/katana/5004海蒂.png"
+  },
+  {
+    "label": "武器图标 武士刀 5005索利斯·叶克里",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/5刀/5005索利斯·叶克里.png",
+    "target": "assets/wiki/presets/weapons/katana/5005索利斯·叶克里.png"
+  },
+  {
+    "label": "武器图标 武士刀 5006剑斩刀：飞柳",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/5刀/5006剑斩刀：飞柳.png",
+    "target": "assets/wiki/presets/weapons/katana/5006剑斩刀：飞柳.png"
+  },
+  {
+    "label": "武器图标 武士刀 5007剑斩刀：破舞",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/5刀/5007剑斩刀：破舞.png",
+    "target": "assets/wiki/presets/weapons/katana/5007剑斩刀：破舞.png"
+  },
+  {
+    "label": "武器图标 武士刀 5008优衣的短匕首",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/5刀/5008优衣的短匕首.png",
+    "target": "assets/wiki/presets/weapons/katana/5008优衣的短匕首.png"
+  },
+  {
+    "label": "武器图标 武士刀 5009亚达玛的誓约",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/5刀/5009亚达玛的誓约.png",
+    "target": "assets/wiki/presets/weapons/katana/5009亚达玛的誓约.png"
+  },
+  {
+    "label": "武器图标 武士刀 5010图书馆幽灵封印研究会第2型",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/5刀/5010图书馆幽灵封印研究会第2型.png",
+    "target": "assets/wiki/presets/weapons/katana/5010图书馆幽灵封印研究会第2型.png"
+  },
+  {
+    "label": "武器图标 武士刀 5011永霜的沉默",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/5刀/5011永霜的沉默.png",
+    "target": "assets/wiki/presets/weapons/katana/5011永霜的沉默.png"
+  },
+  {
+    "label": "武器图标 武士刀 5012纳斯特朗的碎片",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/5刀/5012纳斯特朗的碎片.png",
+    "target": "assets/wiki/presets/weapons/katana/5012纳斯特朗的碎片.png"
+  },
+  {
+    "label": "武器图标 武士刀 5013电光一刻",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/5刀/5013电光一刻.png",
+    "target": "assets/wiki/presets/weapons/katana/5013电光一刻.png"
+  },
+  {
+    "label": "武器图标 武士刀 5014破甲刀",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/5刀/5014破甲刀.png",
+    "target": "assets/wiki/presets/weapons/katana/5014破甲刀.png"
+  },
+  {
+    "label": "武器图标 长棍 6001大力棍",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/6长棍/6001大力棍.png",
+    "target": "assets/wiki/presets/weapons/staff/6001大力棍.png"
+  },
+  {
+    "label": "武器图标 长棍 6002精灵融合杖伊洛妮卡",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/6长棍/6002精灵融合杖伊洛妮卡.png",
+    "target": "assets/wiki/presets/weapons/staff/6002精灵融合杖伊洛妮卡.png"
+  },
+  {
+    "label": "武器图标 长棍 6003海之锚",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/6长棍/6003海之锚.png",
+    "target": "assets/wiki/presets/weapons/staff/6003海之锚.png"
+  },
+  {
+    "label": "武器图标 长棍 6004无环锡杖",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/6长棍/6004无环锡杖.png",
+    "target": "assets/wiki/presets/weapons/staff/6004无环锡杖.png"
+  },
+  {
+    "label": "武器图标 长棍 6005圣海碎片",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/6长棍/6005圣海碎片.png",
+    "target": "assets/wiki/presets/weapons/staff/6005圣海碎片.png"
+  },
+  {
+    "label": "武器图标 长棍 6006突击枪卢阿施蕾娅",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/6长棍/6006突击枪卢阿施蕾娅.png",
+    "target": "assets/wiki/presets/weapons/staff/6006突击枪卢阿施蕾娅.png"
+  },
+  {
+    "label": "武器图标 长棍 6007突击枪普阿尔斯卡",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/6长棍/6007突击枪普阿尔斯卡.png",
+    "target": "assets/wiki/presets/weapons/staff/6007突击枪普阿尔斯卡.png"
+  },
+  {
+    "label": "武器图标 长棍 6008皮亚奥拉议事槌",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/6长棍/6008皮亚奥拉议事槌.png",
+    "target": "assets/wiki/presets/weapons/staff/6008皮亚奥拉议事槌.png"
+  },
+  {
+    "label": "武器图标 长棍 6009索利斯·布拉卡",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/6长棍/6009索利斯·布拉卡.png",
+    "target": "assets/wiki/presets/weapons/staff/6009索利斯·布拉卡.png"
+  },
+  {
+    "label": "武器图标 长棍 6010巫女的预言",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/6长棍/6010巫女的预言.png",
+    "target": "assets/wiki/presets/weapons/staff/6010巫女的预言.png"
+  },
+  {
+    "label": "武器图标 长棍 6011马拉斯皮纳",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/6长棍/6011马拉斯皮纳.png",
+    "target": "assets/wiki/presets/weapons/staff/6011马拉斯皮纳.png"
+  },
+  {
+    "label": "武器图标 长棍 6012比杜卡",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/6长棍/6012比杜卡.png",
+    "target": "assets/wiki/presets/weapons/staff/6012比杜卡.png"
+  },
+  {
+    "label": "武器图标 长棍 6013内波拉克斯",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/6长棍/6013内波拉克斯.png",
+    "target": "assets/wiki/presets/weapons/staff/6013内波拉克斯.png"
+  },
+  {
+    "label": "武器图标 长棍 6014神圣之壶",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/6长棍/6014神圣之壶.png",
+    "target": "assets/wiki/presets/weapons/staff/6014神圣之壶.png"
+  },
+  {
+    "label": "武器图标 长棍 6015无形之舞",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/6长棍/6015无形之舞.png",
+    "target": "assets/wiki/presets/weapons/staff/6015无形之舞.png"
+  },
+  {
+    "label": "武器图标 长棍 6016继承者",
+    "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/6长棍/6016继承者.png",
+    "target": "assets/wiki/presets/weapons/staff/6016继承者.png"
+  }
+]

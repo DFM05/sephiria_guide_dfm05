@@ -3,7 +3,7 @@ from urllib.parse import quote
 
 import streamlit as st
 
-from wiki_ui import show_wiki_image
+from wiki_ui import show_last_updated, show_wiki_image
 
 
 ASSET_DIR = Path(__file__).resolve().parents[1] / "assets" / "wiki" / "game_basics"
@@ -58,6 +58,9 @@ def show_navigation_page() -> None:
 
 st.title("游戏基础/机制分析")
 st.caption("赛菲莉娅 Sephiria / 游戏基础与机制整理")
+
+st.warning("🚧 本页内容已很久未更新，正在施工整理新版本内容，敬请期待。")
+show_last_updated(ASSET_DIR)
 
 category_options = ["导航页", *BASIC_CATEGORIES.keys()]
 requested_category = query_value("category")

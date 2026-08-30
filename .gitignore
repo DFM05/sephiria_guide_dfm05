@@ -4,3 +4,5 @@ __pycache__/
 *.log
 .streamlit/secrets.toml
 .uv-cache/
+cache/pdf_pages/
+static/
