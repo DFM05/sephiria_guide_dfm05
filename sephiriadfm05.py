@@ -1,5 +1,8 @@
 import streamlit as st
 
+import sidebar_links
+import wiki_ui
+
 from sidebar_links import show_sidebar_links
 
 

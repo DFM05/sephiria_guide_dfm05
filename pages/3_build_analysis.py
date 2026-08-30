@@ -208,7 +208,7 @@ else:
                 file_name=display_name,
                 mime=doc_mime,
                 type="primary",
-                use_container_width=True,
+                width="stretch",
             )
 
         if file_suffix == ".pdf":
