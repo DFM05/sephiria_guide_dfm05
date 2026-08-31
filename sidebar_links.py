@@ -8,6 +8,10 @@ def show_sidebar_links() -> None:
     with st.sidebar:
         st.markdown("---")
         st.caption("作者主页")
-        st.markdown("B站 DFM05，赛菲莉娅攻略图与资料整理。")
-        st.markdown("赛菲莉娅同好联机交流群：1022174074")
-        st.link_button("前往作者B站主页", BILIBILI_URL)
+        st.link_button("前往作者B站主页", BILIBILI_URL, use_container_width=True)
+        st.markdown("有网站相关的问题或建议，可以通过 B 站私信联系作者。")
+        st.markdown(
+            "赛菲莉娅同好联机交流群：\n"
+            "- 一群：`1022174074`\n"
+            "- 二群：`992536561`"
+        )
