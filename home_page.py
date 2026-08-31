@@ -176,7 +176,7 @@ def main() -> None:
             <a class="section-card-link" href="/weapon_rankings" target="_self">
             <h3>不同版本武器排行榜</h3>
             <p>整理不同版本中的武器强度、排名变化、推荐程度和适用场景。</p>
-            <div class="card-hint">查看 0.11.6版本武器排行榜</div>
+            <div class="card-hint">查看武器排行榜</div>
             </a>
             """,
             unsafe_allow_html=True,
