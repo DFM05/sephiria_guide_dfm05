@@ -131,6 +131,7 @@ navigation = st.navigation(
         st.Page("pages/4_game_basics.py", title="游戏基础/机制分析", url_path="game_basics"),
         st.Page("pages/3_build_analysis.py", title="流派解析", url_path="build_analysis"),
         st.Page("pages/5_presets.py", title="预设合集", url_path="presets"),
+        st.Page("pages/7_faq_quiz.py", title="常见问题&隋唐小测", url_path="faq_quiz"),
         st.Page("pages/6_changelog.py", title="更新公告", url_path="changelog"),
     ]
 )

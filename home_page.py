@@ -138,7 +138,7 @@ def main() -> None:
         """
         <a class="update-banner" href="/changelog" target="_self">
         <span class="banner-badge">公告</span>
-        <span class="banner-text">2026-08-30：1.0.30 排行榜 / 武器所属流派索引 / 单独武器解析 等大量更新上线</span>
+        <span class="banner-text">2026-09-01：新分区「常见问题 & 隋唐小测」上线，欢迎来测</span>
         <span class="banner-go">查看更新公告 →</span>
         </a>
         """,
@@ -206,7 +206,7 @@ def main() -> None:
             unsafe_allow_html=True,
         )
 
-    col4, col5 = st.columns(2)
+    col4, col5, col6 = st.columns(3)
 
     with col4:
         st.markdown(
@@ -227,6 +227,18 @@ def main() -> None:
             <h3>预设合集</h3>
             <p>收集可直接复制使用的预设码，按武器、流派和玩法方向整理。</p>
             <div class="card-hint">查看可复制预设</div>
+            </a>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    with col6:
+        st.markdown(
+            """
+            <a class="section-card-link" href="/faq_quiz" target="_self">
+            <h3>常见问题&隋唐小测</h3>
+            <p>常见问题解答，以及关于赛菲莉娅的趣味小测验。</p>
+            <div class="card-hint">查看常见问题与小测</div>
             </a>
             """,
             unsafe_allow_html=True,
