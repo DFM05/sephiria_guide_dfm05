@@ -1,6 +1,9 @@
+from pathlib import Path
 from urllib.parse import quote
 
 import streamlit as st
+
+from wiki_ui import show_last_updated
 
 
 # Two entries inside this section. Each entry has its own render function
@@ -102,6 +105,10 @@ FAQ_ITEMS = [
         "有趣的是「15 + 50% 防御」的这个附伤效果并不能享受这个加成。"
         "同时，即使拥有两个青铜镜碎片（开启「重新组装」的 MP 消耗为 0），"
         "在开启特殊普通攻击形态的时候仍然可以使普通攻击享受到该加成。",
+    ),
+    (
+        "剩下一个隐藏成就没做完，到底是什么？/ 与佩尔去见树的成就怎么做？",
+        "去兔子村右下角的萝卜田，找一个叫「费尔」的 NPC 对话就可以了。",
     ),
 ]
 
@@ -369,6 +376,7 @@ ENTRY_RENDERERS = {
 
 st.title("常见问题&隋唐小测")
 st.caption("赛菲莉娅 Sephiria / 常见问题与趣味小测")
+show_last_updated(Path(__file__))
 
 entry_options = ["导航页", *SECTION_ENTRIES]
 requested_entry = query_value("entry")
