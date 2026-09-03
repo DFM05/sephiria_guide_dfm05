@@ -229,6 +229,15 @@ TRUE_FALSE_QUESTIONS = [
         "answer": True,
         "explanation": "确实是，减益伤害不可以直接触发三触。",
     },
+    {
+        "question": (
+            "实际上，武器「爬行的绝望」一个狂怒的倍率，"
+            "与一个叠满「延长法杖」增益且享受满级银冠效果的武器「海之锚」"
+            "的最后一击的倍率基本一致。"
+        ),
+        "answer": True,
+        "explanation": "确实，倍率仅差了高达 3%。",
+    },
 ]
 
 MULTIPLE_CHOICE_QUESTIONS = [
