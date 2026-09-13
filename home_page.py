@@ -138,7 +138,7 @@ def main() -> None:
         """
         <a class="update-banner" href="/changelog" target="_self">
         <span class="banner-badge">公告</span>
-        <span class="banner-text">2026-09-01：新分区「常见问题 & 隋唐小测」上线，欢迎来测</span>
+        <span class="banner-text">2026-09-13：新分区「面板属性详解」上线，逐项解析属性与来源</span>
         <span class="banner-go">查看更新公告 →</span>
         </a>
         """,
@@ -206,7 +206,7 @@ def main() -> None:
             unsafe_allow_html=True,
         )
 
-    col4, col5, col6 = st.columns(3)
+    col4, col5, col6, col7 = st.columns(4)
 
     with col4:
         st.markdown(
@@ -239,6 +239,18 @@ def main() -> None:
             <h3>常见问题&隋唐小测</h3>
             <p>常见问题解答，以及关于赛菲莉娅的趣味小测验。</p>
             <div class="card-hint">查看常见问题与小测</div>
+            </a>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    with col7:
+        st.markdown(
+            """
+            <a class="section-card-link" href="/attribute_analysis" target="_self">
+            <h3>面板属性详解</h3>
+            <p>逐项解析面板上的各类属性，以及它们的数值来源与叠加方式。</p>
+            <div class="card-hint">查看属性与来源</div>
             </a>
             """,
             unsafe_allow_html=True,

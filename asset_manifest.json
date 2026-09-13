@@ -848,5 +848,160 @@
     "label": "武器图标 长棍 6016继承者",
     "source": "D:/self-made-game-related/Sephiria/图鉴/武器/2阶改造（小）/6长棍/6016继承者.png",
     "target": "assets/wiki/presets/weapons/staff/6016继承者.png"
+  },
+  {
+    "label": "面板属性 1四属性伤害 物理伤害",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/1四属性伤害/1物理伤害.png",
+    "target": "assets/wiki/attribute_analysis/elemental_damage/physical.png"
+  },
+  {
+    "label": "面板属性 1四属性伤害 火焰属性伤害",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/1四属性伤害/2火焰属性伤害.png",
+    "target": "assets/wiki/attribute_analysis/elemental_damage/fire.png"
+  },
+  {
+    "label": "面板属性 1四属性伤害 冰属性伤害",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/1四属性伤害/3冰属性伤害.png",
+    "target": "assets/wiki/attribute_analysis/elemental_damage/ice.png"
+  },
+  {
+    "label": "面板属性 1四属性伤害 闪电属性伤害",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/1四属性伤害/4闪电属性伤害.png",
+    "target": "assets/wiki/attribute_analysis/elemental_damage/lightning.png"
+  },
+  {
+    "label": "面板属性 2HP&MP HP&HP偷取",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/2HP&MP/1HP&HP偷取.png",
+    "target": "assets/wiki/attribute_analysis/hp_mp/hp.png"
+  },
+  {
+    "label": "面板属性 2HP&MP MP&MP再生&MP吸收&消耗MP的能力伤害",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/2HP&MP/2MP&MP再生&MP吸收&消耗MP的能力伤害.png",
+    "target": "assets/wiki/attribute_analysis/hp_mp/mp.png"
+  },
+  {
+    "label": "面板属性 3防御力&闪避 防御力&荆棘",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/3防御力&闪避/1防御力&荆棘.png",
+    "target": "assets/wiki/attribute_analysis/defense_evasion/defense.png"
+  },
+  {
+    "label": "面板属性 3防御力&闪避 闪避",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/3防御力&闪避/2闪避.png",
+    "target": "assets/wiki/attribute_analysis/defense_evasion/evasion.png"
+  },
+  {
+    "label": "面板属性 4暴击几率&暴击伤害 暴击几率",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/4暴击几率&暴击伤害/1暴击几率.png",
+    "target": "assets/wiki/attribute_analysis/crit/crit_chance.png"
+  },
+  {
+    "label": "面板属性 4暴击几率&暴击伤害 暴击伤害",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/4暴击几率&暴击伤害/2暴击伤害.png",
+    "target": "assets/wiki/attribute_analysis/crit/crit_damage.png"
+  },
+  {
+    "label": "面板属性 5攻击速度&移动速度 攻击速度",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/5攻击速度&移动速度/1攻击速度.png",
+    "target": "assets/wiki/attribute_analysis/speed/attack_speed.png"
+  },
+  {
+    "label": "面板属性 5攻击速度&移动速度 移动速度",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/5攻击速度&移动速度/2移动速度.png",
+    "target": "assets/wiki/attribute_analysis/speed/movement_speed.png"
+  },
+  {
+    "label": "面板属性 6所有伤害放大，无视防御伤害，无视防御 所有伤害放大",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/6所有伤害放大，无视防御伤害，无视防御/1所有伤害放大.png",
+    "target": "assets/wiki/attribute_analysis/damage_amplification/all_damage_boost.png"
+  },
+  {
+    "label": "面板属性 6所有伤害放大，无视防御伤害，无视防御 无视防御伤害&无视防御",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/6所有伤害放大，无视防御伤害，无视防御/2无视防御伤害&无视防御.png",
+    "target": "assets/wiki/attribute_analysis/damage_amplification/defense_pierce.png"
+  },
+  {
+    "label": "面板属性 7武器伤害相关 武器伤害",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/7武器伤害相关/1武器伤害.png",
+    "target": "assets/wiki/attribute_analysis/weapon_damage/weapon_damage.png"
+  },
+  {
+    "label": "面板属性 7武器伤害相关 普通攻击伤害",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/7武器伤害相关/2普通攻击伤害.png",
+    "target": "assets/wiki/attribute_analysis/weapon_damage/normal_attack.png"
+  },
+  {
+    "label": "面板属性 7武器伤害相关 冲刺攻击伤害",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/7武器伤害相关/3冲刺攻击伤害.png",
+    "target": "assets/wiki/attribute_analysis/weapon_damage/dash_attack.png"
+  },
+  {
+    "label": "面板属性 7武器伤害相关 特殊攻击伤害",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/7武器伤害相关/4特殊攻击伤害.png",
+    "target": "assets/wiki/attribute_analysis/weapon_damage/special_attack.png"
+  },
+  {
+    "label": "面板属性 8杂项 冲刺恢复速度&冲刺次数",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/8杂项/1冲刺恢复速度&冲刺次数.png",
+    "target": "assets/wiki/attribute_analysis/misc/dash_recovery.png"
+  },
+  {
+    "label": "面板属性 8杂项 谈判力&幸运值&经验值掉落&叶子掉落",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/8杂项/2谈判力&幸运值&经验值掉落&叶子掉落.png",
+    "target": "assets/wiki/attribute_analysis/misc/luck_exp.png"
+  },
+  {
+    "label": "面板属性 8杂项 背包空间&许愿池容量&水果串上限&神器伤害",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/8杂项/3背包空间&许愿池容量&水果串上限&神器伤害.png",
+    "target": "assets/wiki/attribute_analysis/misc/inventory.png"
+  },
+  {
+    "label": "面板属性 9流派专属加成 魔法书相关",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/9流派专属加成/1魔法书相关.png",
+    "target": "assets/wiki/attribute_analysis/school_bonus/magic_book.png"
+  },
+  {
+    "label": "面板属性 9流派专属加成 同伴相关",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/9流派专属加成/2同伴相关.png",
+    "target": "assets/wiki/attribute_analysis/school_bonus/companion.png"
+  },
+  {
+    "label": "面板属性 9流派专属加成 行星相关",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/9流派专属加成/3行星相关.png",
+    "target": "assets/wiki/attribute_analysis/school_bonus/planet.png"
+  },
+  {
+    "label": "面板属性 9流派专属加成 减益效果相关",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/9流派专属加成/4减益效果相关.png",
+    "target": "assets/wiki/attribute_analysis/school_bonus/debuff.png"
+  },
+  {
+    "label": "面板属性 9流派专属加成 灼烧相关",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/9流派专属加成/5灼烧相关.png",
+    "target": "assets/wiki/attribute_analysis/school_bonus/burn.png"
+  },
+  {
+    "label": "面板属性 9流派专属加成 太阳剑相关",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/9流派专属加成/6太阳剑相关.png",
+    "target": "assets/wiki/attribute_analysis/school_bonus/sun_sword.png"
+  },
+  {
+    "label": "面板属性 9流派专属加成 冰冻相关",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/9流派专属加成/7冰冻相关.png",
+    "target": "assets/wiki/attribute_analysis/school_bonus/freeze.png"
+  },
+  {
+    "label": "面板属性 9流派专属加成 冰霜武具相关",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/9流派专属加成/8冰霜武具相关.png",
+    "target": "assets/wiki/attribute_analysis/school_bonus/frost_armament.png"
+  },
+  {
+    "label": "面板属性 9流派专属加成 触电相关",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/9流派专属加成/9触电相关.png",
+    "target": "assets/wiki/attribute_analysis/school_bonus/shock.png"
+  },
+  {
+    "label": "面板属性 9流派专属加成 乌云相关",
+    "source": "D:/self-made-game-related/Sephiria/一图流攻略合集/7面板属性详解&属性提供来源/9流派专属加成/10乌云相关.png",
+    "target": "assets/wiki/attribute_analysis/school_bonus/storm_cloud.png"
   }
 ]

@@ -129,6 +129,7 @@ navigation = st.navigation(
         st.Page("pages/1_weapon_rankings.py", title="武器排行榜", url_path="weapon_rankings"),
         st.Page("pages/2_weapon_analysis.py", title="武器解析", url_path="weapon_analysis"),
         st.Page("pages/4_game_basics.py", title="游戏基础/机制分析", url_path="game_basics"),
+        st.Page("pages/8_attribute_analysis.py", title="面板属性详解", url_path="attribute_analysis"),
         st.Page("pages/3_build_analysis.py", title="流派解析", url_path="build_analysis"),
         st.Page("pages/5_presets.py", title="预设合集", url_path="presets"),
         st.Page("pages/7_faq_quiz.py", title="常见问题&隋唐小测", url_path="faq_quiz"),
