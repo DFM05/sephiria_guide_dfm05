@@ -1,6 +1,7 @@
 import streamlit as st
 
 import sidebar_links
+import site_search
 import wiki_ui
 
 from sidebar_links import show_sidebar_links
@@ -136,6 +137,11 @@ navigation = st.navigation(
         st.Page("pages/6_changelog.py", title="更新公告", url_path="changelog"),
     ]
 )
+
+# 搜索框放在 navigation.run() 之前，这样页面里调用 st.stop()（如各「导航页」）
+# 也不会跳过它。Streamlit 1.56 下实测会正常显示在导航链接下方。
+with st.sidebar:
+    site_search.render_search_box()
 
 # NOTE: st.Page / st.navigation 新 API 下，Streamlit 会在调用 navigation.run()
 # 时重新构建整个 sidebar（包含导航链接）。在此之前写的 st.sidebar 内容会被

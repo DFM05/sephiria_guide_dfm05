@@ -1538,14 +1538,23 @@ PRESET_DATA: dict[str, list[dict]] = {
 PRESET_CATEGORIES = ("看前须知", *PRESET_DATA.keys())
 
 
+def query_value(name: str) -> str | None:
+    value = st.query_params.get(name)
+    if isinstance(value, list):
+        return value[0] if value else None
+    return value
+
+
 st.title("预设合集")
 st.caption("赛菲莉娅 Sephiria / 可复制预设码资料库")
 show_last_updated(WEAPON_ICON_DIR)
 
+requested_category = query_value("category")
+
 selected_category = st.segmented_control(
     "预设分类",
     PRESET_CATEGORIES,
-    default="看前须知",
+    default=requested_category if requested_category in PRESET_CATEGORIES else "看前须知",
 )
 
 if selected_category == "看前须知":
