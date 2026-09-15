@@ -1,5 +1,7 @@
 import streamlit as st
 
+import site_search
+
 
 def main() -> None:
     st.markdown(
@@ -151,6 +153,12 @@ def main() -> None:
         <div class="subtitle">B站 DFM05 独立制作的游戏攻略资料站</div>
         """,
         unsafe_allow_html=True,
+    )
+
+    site_search.render_search_input(
+        "home_search",
+        "搜索武器、流派、属性、预设…（支持拼音，回车搜索）",
+        icon=":material/search:",
     )
 
     st.markdown(

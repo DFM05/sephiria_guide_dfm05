@@ -127,6 +127,7 @@ _inject_global_theme_overrides()
 navigation = st.navigation(
     [
         st.Page("home_page.py", title="主页", url_path="home"),
+        st.Page("search_page.py", title="全站搜索", url_path="search"),
         st.Page("pages/1_weapon_rankings.py", title="武器排行榜", url_path="weapon_rankings"),
         st.Page("pages/2_weapon_analysis.py", title="武器解析", url_path="weapon_analysis"),
         st.Page("pages/4_game_basics.py", title="游戏基础/机制分析", url_path="game_basics"),
@@ -141,7 +142,7 @@ navigation = st.navigation(
 # 搜索框放在 navigation.run() 之前，这样页面里调用 st.stop()（如各「导航页」）
 # 也不会跳过它。Streamlit 1.56 下实测会正常显示在导航链接下方。
 with st.sidebar:
-    site_search.render_search_box()
+    site_search.render_sidebar_search()
 
 # NOTE: st.Page / st.navigation 新 API 下，Streamlit 会在调用 navigation.run()
 # 时重新构建整个 sidebar（包含导航链接）。在此之前写的 st.sidebar 内容会被
