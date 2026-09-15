@@ -29,7 +29,6 @@ ROOT_DIR = Path(__file__).resolve().parent
 MAIN_SCRIPT = ROOT_DIR / "sephiriadfm05.py"
 FUSE_JS = ROOT_DIR / "assets" / "vendor" / "fuse.js" / "fuse.basic.min.cjs"
 SEARCH_PAGE = "search_page.py"
-_PENDING_QUERY_KEY = "_site_search_pending_query"
 
 
 @dataclass(frozen=True)
@@ -39,8 +38,8 @@ class SearchEntry:
     breadcrumb: str
     query_params: tuple[tuple[str, str], ...] = ()
     keywords: str = ""
-    # 跳转后要定位并高亮的文字（第二项是同一块里的辅助文字，用来区分同名条目）；默认用标题
-    highlight: tuple[str, ...] = ()
+    highlight: str = ""  # 跳转后要定位并高亮的文字，默认用标题
+    highlight_context: str = ""  # 同一块里的辅助文字，用来区分同名条目
 
     @property
     def section(self) -> str:
@@ -117,13 +116,14 @@ def _category_entries(
     page_title: str,
     categories: ast.expr | None,
     item_param: str,
-    authors: dict[str, str] | None = None,
+    authors_node: ast.expr | None,
 ) -> list[SearchEntry]:
+    authors = {name: author for name, value in _dict_items(authors_node) if (author := _str(value))}
     entries = []
     for category, items in _dict_items(categories):
         entries.append(SearchEntry(category, page, page_title, (("category", category),)))
         for item in _first_strings(items):
-            author = (authors or {}).get(item)
+            author = authors.get(item)
             entries.append(
                 SearchEntry(
                     item,
@@ -140,31 +140,29 @@ def _build_entries(pages: dict[str, tuple[str, str]]) -> list[SearchEntry]:
     titles = {page: title for page, (title, _) in pages.items() if page != SEARCH_PAGE}
     entries = [SearchEntry(title, page, "站内页面") for page, title in titles.items()]
 
-    page = "pages/1_weapon_rankings.py"
-    values, page_title = _assignments(ROOT_DIR / page), titles.get(page, "")
-    for version in _first_strings(values.get("VERSION_RANKINGS")):
-        entries.append(SearchEntry(f"{version}版本武器排行榜", page, page_title, (("version", version),)))
+    def load(page: str) -> tuple[dict[str, ast.expr], str]:
+        return _assignments(ROOT_DIR / page), titles.get(page, "")
 
-    page = "pages/2_weapon_analysis.py"
-    values, page_title = _assignments(ROOT_DIR / page), titles.get(page, "")
-    for weapon in _first_strings(values.get("WEAPONS")):
-        entries.append(SearchEntry(f"{weapon}全改造一图流", page, page_title, (("weapon", weapon),)))
+    # 列表页：[(名称, 图片), ...]，页面用 ?<param>=名称 定位，标题与页面小标题一致
+    for page, constant, title_template, param in (
+        ("pages/1_weapon_rankings.py", "VERSION_RANKINGS", "{}版本武器排行榜", "version"),
+        ("pages/2_weapon_analysis.py", "WEAPONS", "{}全改造一图流", "weapon"),
+    ):
+        values, page_title = load(page)
+        for name in _first_strings(values.get(constant)):
+            entries.append(SearchEntry(title_template.format(name), page, page_title, ((param, name),)))
 
-    page = "pages/3_build_analysis.py"
-    values, page_title = _assignments(ROOT_DIR / page), titles.get(page, "")
-    authors = {name: author for name, value in _dict_items(values.get("BUILD_AUTHORS")) if (author := _str(value))}
-    entries += _category_entries(page, page_title, values.get("BUILD_CATEGORIES"), "build", authors)
-
-    page = "pages/4_game_basics.py"
-    values, page_title = _assignments(ROOT_DIR / page), titles.get(page, "")
-    entries += _category_entries(page, page_title, values.get("BASIC_CATEGORIES"), "item")
-
-    page = "pages/8_attribute_analysis.py"
-    values, page_title = _assignments(ROOT_DIR / page), titles.get(page, "")
-    entries += _category_entries(page, page_title, values.get("ATTRIBUTE_CATEGORIES"), "item")
+    # 分类页：{大类: [(条目, 文件), ...]}，页面用 ?category=大类&<param>=条目 定位
+    for page, constant, param in (
+        ("pages/3_build_analysis.py", "BUILD_CATEGORIES", "build"),
+        ("pages/4_game_basics.py", "BASIC_CATEGORIES", "item"),
+        ("pages/8_attribute_analysis.py", "ATTRIBUTE_CATEGORIES", "item"),
+    ):
+        values, page_title = load(page)
+        entries += _category_entries(page, page_title, values.get(constant), param, values.get("BUILD_AUTHORS"))
 
     page = "pages/5_presets.py"
-    values, page_title = _assignments(ROOT_DIR / page), titles.get(page, "")
+    values, page_title = load(page)
     for category, presets in _dict_items(values.get("PRESET_DATA")):
         params = (("category", category),)
         entries.append(SearchEntry(f"{category}预设", page, page_title, params))
@@ -183,12 +181,13 @@ def _build_entries(pages: dict[str, tuple[str, str]]) -> list[SearchEntry]:
                     params,
                     keywords=" · ".join(filter(None, (fields.get("notes"), f"作者：{author}" if author else None))),
                     # 预设卡片上标题和副标题分开显示，同名预设靠副标题区分
-                    highlight=(name, subtitle) if subtitle else (name,),
+                    highlight=name,
+                    highlight_context=subtitle or "",
                 )
             )
 
     page = "pages/7_faq_quiz.py"
-    values, page_title = _assignments(ROOT_DIR / page), titles.get(page, "")
+    values, page_title = load(page)
     for elts in _tuples(values.get("FAQ_ITEMS")):
         question = _text(elts[0])
         answer = _text(elts[1]) if len(elts) > 1 else ""
@@ -206,8 +205,9 @@ def _page_url(page: str, pages: dict[str, tuple[str, str]]) -> str:
 
 def _entry_url(entry: SearchEntry, pages: dict[str, tuple[str, str]]) -> str:
     # hl / hlctx 不影响页面本身，只给侧边栏组件用来滚动到文字位置并高亮
-    highlight = entry.highlight or (entry.title,)
-    params = [*entry.query_params, ("hl", highlight[0]), *(("hlctx", text) for text in highlight[1:2])]
+    params = [*entry.query_params, ("hl", entry.highlight or entry.title)]
+    if entry.highlight_context:
+        params.append(("hlctx", entry.highlight_context))
     return _page_url(entry.page, pages) + "?" + urlencode(params, quote_via=quote)
 
 
@@ -239,36 +239,8 @@ def _index_json() -> str:
 
 @st.cache_resource(show_spinner=False)
 def _fuse_js() -> str:
-    return _script_safe(FUSE_JS.read_text(encoding="utf-8")) if FUSE_JS.exists() else ""
+    return _script_safe(FUSE_JS.read_text(encoding="utf-8"))
 
-
-_DOCUMENT_TEMPLATE = """
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="utf-8">
-<style>
-__BASE_CSS__
-__PAGE_CSS__
-</style>
-</head>
-<body>
-<div id="app">
-__PAGE_BODY__
-</div>
-<script>
-  // Fuse.js 7.x 只发布 CommonJS / ESM 构建，这里给 CommonJS 版提供 module 对象后取出 Fuse
-  var module = { exports: {} };
-__FUSE_JS__
-  var Fuse = module.exports;
-</script>
-<script>
-__BASE_JS__
-__PAGE_JS__
-</script>
-</body>
-</html>
-"""
 
 _BASE_CSS = """
   html, body {
@@ -304,25 +276,22 @@ _BASE_CSS = """
 """
 
 _BASE_JS = """
-  var INDEX = __INDEX_JSON__;
   var ASCII_ONLY = /^[\\x00-\\x7f]*$/;
 
   // 模糊匹配只在没有精确结果时兜底（容错字）。中文查标题，字母查全拼；
   // 字母字符集小，阈值放宽会匹配出大量无关条目，所以更严格。
   var FUSE_OPTIONS = { includeScore: true, ignoreLocation: true, ignoreFieldNorm: true };
-  var hasFuse = typeof Fuse !== "undefined";
-  var fuseTitle = hasFuse ? new Fuse(INDEX, Object.assign({ keys: ["title"], threshold: 0.5 }, FUSE_OPTIONS)) : null;
-  var fusePinyin = hasFuse ? new Fuse(INDEX, Object.assign({ keys: ["p"], threshold: 0.3 }, FUSE_OPTIONS)) : null;
+  var fuseTitle = new Fuse(INDEX, Object.assign({ keys: ["title"], threshold: 0.5 }, FUSE_OPTIONS));
+  var fusePinyin = new Fuse(INDEX, Object.assign({ keys: ["p"], threshold: 0.3 }, FUSE_OPTIONS));
 
   function normalize(text) {
     return text.toLowerCase().replace(/\\s+/g, "");
   }
 
-  function tierScore(q, item) {
+  function tierScore(q, ascii, item) {
     if (q === item.t) return 1000;
     if (item.t.indexOf(q) === 0) return 900;
     if (item.t.indexOf(q) !== -1) return 800;
-    var ascii = ASCII_ONLY.test(q);
     if (ascii && (item.i.indexOf(q) === 0 || item.p.indexOf(q) === 0)) return 700;
     if (ascii && (item.i.indexOf(q) !== -1 || item.p.indexOf(q) !== -1)) return 600;
     if (item.x.indexOf(q) !== -1) return 500;
@@ -333,27 +302,22 @@ _BASE_JS = """
   function search(term) {
     var q = normalize(term);
     if (!q) return { items: [], fuzzy: false };
-    var scores = {};
+    var ascii = ASCII_ONLY.test(q);
+    var rows = [];
     INDEX.forEach(function (item, order) {
-      var score = tierScore(q, item);
-      if (score) scores[order] = score;
+      var score = tierScore(q, ascii, item);
+      if (score) rows.push({ item: item, order: order, score: score });
     });
-    var fuzzy = false;
-    if (!Object.keys(scores).length) {
-      var ascii = ASCII_ONLY.test(q);
-      var engine = ascii ? fusePinyin : fuseTitle;
-      if (engine && q.length >= (ascii ? 4 : 3)) {
-        engine.search(q).forEach(function (hit) { scores[hit.refIndex] = 100 * (1 - hit.score); });
-        fuzzy = Object.keys(scores).length > 0;
-      }
+    var fuzzy = !rows.length && q.length >= (ascii ? 4 : 3);
+    if (fuzzy) {
+      (ascii ? fusePinyin : fuseTitle).search(q).forEach(function (hit) {
+        rows.push({ item: hit.item, order: hit.refIndex, score: 100 * (1 - hit.score) });
+      });
     }
-    var items = Object.keys(scores)
-      .map(function (order) { return { item: INDEX[order], order: Number(order), score: scores[order] }; })
-      .sort(function (a, b) {
-        return b.score - a.score || a.item.t.length - b.item.t.length || a.order - b.order;
-      })
-      .map(function (row) { return row.item; });
-    return { items: items, fuzzy: fuzzy };
+    rows.sort(function (a, b) {
+      return b.score - a.score || a.item.t.length - b.item.t.length || a.order - b.order;
+    });
+    return { items: rows.map(function (row) { return row.item; }), fuzzy: fuzzy && rows.length > 0 };
   }
 
   function escapeHtml(text) {
@@ -479,8 +443,8 @@ _RESULTS_BODY = """
   <div id="results"></div>
 """
 
+# 需要注入的变量：INITIAL_QUERY
 _RESULTS_JS = """
-  var INITIAL_QUERY = __QUERY_JSON__;
   var ALL = "全部";
   var input = document.getElementById("query");
   var pillsEl = document.getElementById("pills");
@@ -623,8 +587,8 @@ _SIDEBAR_BODY = """
   <div id="suggestions" hidden></div>
 """
 
+# 需要注入的变量：SEARCH_URL
 _SIDEBAR_JS = """
-  var SEARCH_URL = __SEARCH_URL_JSON__;
   var MAX_SUGGESTIONS = 8;
   var input = document.getElementById("query");
   var listEl = document.getElementById("suggestions");
@@ -739,10 +703,12 @@ _JUMP_TO_HIT_JS = """
         var at = node.nodeValue.indexOf(text);
         var el = node.parentElement;
         if (at === -1 || !isVisible(el)) continue;
-        var block = el.closest(".preset-card") || root;
-        var score = priority(el, !!frame);
-        if (context && block.textContent.indexOf(context) !== -1) score += 10;
-        hits.push({ doc: doc, node: node, at: at, el: el, frame: frame, score: score });
+        var card = context ? el.closest(".preset-card") : null;
+        hits.push({
+          doc: doc, node: node, at: at, el: el, frame: frame,
+          priority: priority(el, !!frame),
+          inContext: !!card && card.textContent.indexOf(context) !== -1,
+        });
       }
       return hits;
     }
@@ -756,7 +722,7 @@ _JUMP_TO_HIT_JS = """
           if (doc && doc.body && isVisible(frame)) hits = hits.concat(collect(doc, doc.body, frame));
         } catch (e) {}
       });
-      hits.sort(function (a, b) { return b.score - a.score; });
+      hits.sort(function (a, b) { return (b.inContext - a.inContext) || (b.priority - a.priority); });
       return hits[0] || null;
     }
 
@@ -781,69 +747,72 @@ _JUMP_TO_HIT_JS = """
       }
     }
 
-    function reveal(hit, behavior) {
-      (hit.frame || hit.el).scrollIntoView({ block: "center", behavior: behavior });
+    // 直接跳过去，不用平滑滚动：页面在后台标签页等不可见状态时平滑滚动根本不会执行
+    function reveal(hit) {
+      (hit.frame || hit.el).scrollIntoView({ block: "center" });
+    }
+
+    // 上方的图片、预设卡片加载完会改变页面高度：用户自己滚动之前，内容高度每变一次就重新对准
+    function followLayout(hit) {
+      var content = parent.document.querySelector('[data-testid="stMainBlockContainer"]');
+      if (!content || typeof parent.ResizeObserver === "undefined") return;
+      var observer = new parent.ResizeObserver(function () {
+        if (userScrolled || !hit.node.isConnected) observer.disconnect();
+        else reveal(hit);
+      });
+      observer.observe(content);
+      setTimeout(function () { observer.disconnect(); }, 15000);
     }
 
     function attempt() {
       var hit = locate();
       var waited = Date.now() - started;
       // 刚加载时标题可能还没渲染出来，先别急着用按钮上的同名文字
-      if (!hit || (hit.score % 10 < 3 && waited < 2500)) {
+      if (!hit || (hit.priority < 3 && waited < 2500)) {
         if (waited < 12000) setTimeout(attempt, 300);
         return;
       }
       paint(hit);
-      reveal(hit, "smooth");
-      // 上方的图片、预设卡片加载完会改变页面高度；用户没有自己滚动时再校正几次位置
-      [900, 2000, 4000].forEach(function (delay) {
-        setTimeout(function () {
-          if (!userScrolled && hit.node.isConnected) reveal(hit, "auto");
-        }, delay);
-      });
+      reveal(hit);
+      followLayout(hit);
     }
     attempt();
   })();
 """
 
 
-def _component_html(page_css: str, page_body: str, page_js: str, values: dict[str, str]) -> str:
-    html = _DOCUMENT_TEMPLATE
-    replacements = [
-        ("__BASE_CSS__", _BASE_CSS),
-        ("__PAGE_CSS__", page_css),
-        ("__PAGE_BODY__", page_body),
-        ("__BASE_JS__", _BASE_JS),
-        ("__PAGE_JS__", page_js),
-        ("__INDEX_JSON__", _index_json()),
-        *values.items(),
-        # 最后替换第三方库，避免库代码里的内容被当成占位符
-        ("__FUSE_JS__", _fuse_js()),
-    ]
-    for placeholder, text in replacements:
-        html = html.replace(placeholder, text)
-    return html
-
-
-def _json_value(value: str) -> str:
-    return _script_safe(json.dumps(value, ensure_ascii=False))
+def _component_html(page_css: str, page_body: str, page_js: str, **data: str) -> str:
+    """组件 iframe 的完整 HTML。data 以同名 JS 全局变量注入（INDEX 总会注入），页面 JS 直接使用。"""
+    data_js = "".join(
+        f"  var {name} = {_script_safe(json.dumps(value, ensure_ascii=False))};\n" for name, value in data.items()
+    )
+    return f"""<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>{_BASE_CSS}{page_css}</style>
+</head>
+<body>
+<div id="app">{page_body}</div>
+<script>
+  // Fuse.js 7.x 只发布 CommonJS / ESM 构建，这里给 CommonJS 版提供 module 对象后取出 Fuse
+  var module = {{ exports: {{}} }};
+{_fuse_js()}
+  var Fuse = module.exports;
+</script>
+<script>
+  var INDEX = {_index_json()};
+{data_js}{_BASE_JS}{page_js}</script>
+</body>
+</html>
+"""
 
 
 def render_results(initial_query: str) -> None:
     """「全站搜索」页的搜索框 + 结果列表，筛选全部在浏览器里完成。"""
-    html = _component_html(_RESULTS_CSS, _RESULTS_BODY, _RESULTS_JS, {"__QUERY_JSON__": _json_value(initial_query)})
+    html = _component_html(_RESULTS_CSS, _RESULTS_BODY, _RESULTS_JS, INITIAL_QUERY=initial_query)
     # 初始高度只兜底，iframe 内 JS 会按内容精确自适应
     components.html(html, height=600, scrolling=False)
-
-
-def _sidebar_html() -> str:
-    search_url = _page_url(SEARCH_PAGE, _pages())
-    return _component_html(
-        _SIDEBAR_CSS,
-        _SIDEBAR_BODY,
-        _SIDEBAR_JS + _JUMP_TO_HIT_JS,
-        {"__SEARCH_URL_JSON__": _json_value(search_url)},
-    )
 
 
 # - 结果列表展开时 iframe 会比所在容器高，要浮在下方侧边栏内容之上，否则会被盖住、点不到
@@ -863,27 +832,12 @@ section[data-testid="stSidebar"] .st-key-sidebar_search iframe {
 
 def render_sidebar_search() -> None:
     """侧边栏搜索框：边输入边在下方列出匹配条目，回车打开「全站搜索」页。"""
+    html = _component_html(
+        _SIDEBAR_CSS,
+        _SIDEBAR_BODY,
+        _SIDEBAR_JS + _JUMP_TO_HIT_JS,
+        SEARCH_URL=_page_url(SEARCH_PAGE, _pages()),
+    )
     st.html(_SIDEBAR_IFRAME_CSS)
     with st.container(key="sidebar_search"):
-        components.html(_sidebar_html(), height=28, scrolling=False)
-
-
-def _queue_search(key: str) -> None:
-    # 回调里不能直接 switch_page：先记下关键词并清空输入框，脚本执行到输入框下方时再跳转
-    st.session_state[_PENDING_QUERY_KEY] = st.session_state[key].strip()
-    st.session_state[key] = ""
-
-
-def render_search_input(key: str, placeholder: str, **text_input_kwargs) -> None:
-    """主页搜索框：回车后跳到「全站搜索」页展示全部结果。"""
-    st.text_input(
-        "搜索全站",
-        key=key,
-        placeholder=placeholder,
-        label_visibility="collapsed",
-        on_change=_queue_search,
-        args=(key,),
-        **text_input_kwargs,
-    )
-    if query := st.session_state.pop(_PENDING_QUERY_KEY, None):
-        st.switch_page(SEARCH_PAGE, query_params={"q": query})
+        components.html(html, height=28, scrolling=False)

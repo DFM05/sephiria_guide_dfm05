@@ -24,19 +24,12 @@ VERSION_RANKINGS = [
 ]
 
 
-def query_value(name: str) -> str | None:
-    value = st.query_params.get(name)
-    if isinstance(value, list):
-        return value[0] if value else None
-    return value
-
-
 st.title("不同版本武器排行榜")
 st.caption("赛菲莉娅 Sephiria / 不同版本武器排行榜")
 show_last_updated(RANKING_DIR)
 
 version_options = [version_name for version_name, _ in VERSION_RANKINGS]
-requested_version = query_value("version")
+requested_version = st.query_params.get("version")
 
 version = st.segmented_control(
     "选择版本",

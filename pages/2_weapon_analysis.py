@@ -17,19 +17,12 @@ WEAPONS = [
 ]
 
 
-def query_value(name: str) -> str | None:
-    value = st.query_params.get(name)
-    if isinstance(value, list):
-        return value[0] if value else None
-    return value
-
-
 st.title("武器解析")
 st.caption("赛菲莉娅 Sephiria / 六大武器改造分支")
 show_last_updated(ASSET_DIR)
 
 weapon_options = [weapon_name for weapon_name, _ in WEAPONS]
-requested_weapon = query_value("weapon")
+requested_weapon = st.query_params.get("weapon")
 
 tabs = st.tabs(
     weapon_options,
