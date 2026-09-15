@@ -21,7 +21,13 @@ st.title("武器解析")
 st.caption("赛菲莉娅 Sephiria / 六大武器改造分支")
 show_last_updated(ASSET_DIR)
 
-tabs = st.tabs([weapon_name for weapon_name, _ in WEAPONS])
+weapon_options = [weapon_name for weapon_name, _ in WEAPONS]
+requested_weapon = st.query_params.get("weapon")
+
+tabs = st.tabs(
+    weapon_options,
+    default=requested_weapon if requested_weapon in weapon_options else None,
+)
 
 for tab, (weapon_name, image_name) in zip(tabs, WEAPONS):
     with tab:

@@ -5,6 +5,7 @@ description = "B站 DFM05 自制的《赛菲莉娅（Sephiria）》游戏 Wiki"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "pypinyin>=0.55.0",
     "streamlit>=1.35",
 ]
 

@@ -1,5 +1,7 @@
 import streamlit as st
 
+import site_search
+
 
 def main() -> None:
     st.markdown(
@@ -152,6 +154,16 @@ def main() -> None:
         """,
         unsafe_allow_html=True,
     )
+
+    # 回车后跳到「全站搜索」页展示全部结果；离开主页后输入框的值会被 Streamlit 自动清掉
+    if query := st.text_input(
+        "搜索全站",
+        key="home_search",
+        placeholder="搜索武器、流派、属性、预设…（支持拼音，回车搜索）",
+        icon=":material/search:",
+        label_visibility="collapsed",
+    ).strip():
+        st.switch_page(site_search.SEARCH_PAGE, query_params={"q": query})
 
     st.markdown(
         """

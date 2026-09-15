@@ -1542,10 +1542,12 @@ st.title("预设合集")
 st.caption("赛菲莉娅 Sephiria / 可复制预设码资料库")
 show_last_updated(WEAPON_ICON_DIR)
 
+requested_category = st.query_params.get("category")
+
 selected_category = st.segmented_control(
     "预设分类",
     PRESET_CATEGORIES,
-    default="看前须知",
+    default=requested_category if requested_category in PRESET_CATEGORIES else "看前须知",
 )
 
 if selected_category == "看前须知":

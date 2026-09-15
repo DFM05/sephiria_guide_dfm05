@@ -28,10 +28,13 @@ st.title("不同版本武器排行榜")
 st.caption("赛菲莉娅 Sephiria / 不同版本武器排行榜")
 show_last_updated(RANKING_DIR)
 
+version_options = [version_name for version_name, _ in VERSION_RANKINGS]
+requested_version = st.query_params.get("version")
+
 version = st.segmented_control(
     "选择版本",
-    options=[version_name for version_name, _ in VERSION_RANKINGS],
-    default="1.0.30",
+    options=version_options,
+    default=requested_version if requested_version in version_options else "1.0.30",
 )
 
 selected_image = next(image_path for version_name, image_path in VERSION_RANKINGS if version_name == version)
