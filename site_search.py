@@ -39,6 +39,8 @@ class SearchEntry:
     breadcrumb: str
     query_params: tuple[tuple[str, str], ...] = ()
     keywords: str = ""
+    # 跳转后要定位并高亮的文字（第二项是同一块里的辅助文字，用来区分同名条目）；默认用标题
+    highlight: tuple[str, ...] = ()
 
     @property
     def section(self) -> str:
@@ -180,6 +182,8 @@ def _build_entries(pages: dict[str, tuple[str, str]]) -> list[SearchEntry]:
                     f"{page_title} › {category}",
                     params,
                     keywords=" · ".join(filter(None, (fields.get("notes"), f"作者：{author}" if author else None))),
+                    # 预设卡片上标题和副标题分开显示，同名预设靠副标题区分
+                    highlight=(name, subtitle) if subtitle else (name,),
                 )
             )
 
@@ -201,10 +205,10 @@ def _page_url(page: str, pages: dict[str, tuple[str, str]]) -> str:
 
 
 def _entry_url(entry: SearchEntry, pages: dict[str, tuple[str, str]]) -> str:
-    url = _page_url(entry.page, pages)
-    if entry.query_params:
-        url += "?" + urlencode(entry.query_params, quote_via=quote)
-    return url
+    # hl / hlctx 不影响页面本身，只给侧边栏组件用来滚动到文字位置并高亮
+    highlight = entry.highlight or (entry.title,)
+    params = [*entry.query_params, ("hl", highlight[0]), *(("hlctx", text) for text in highlight[1:2])]
+    return _page_url(entry.page, pages) + "?" + urlencode(params, quote_via=quote)
 
 
 def _script_safe(text: str) -> str:
@@ -697,6 +701,112 @@ _SIDEBAR_JS = """
 """
 
 
+_JUMP_TO_HIT_JS = """
+  // 从搜索结果跳转过来时，网址带 hl=要定位的文字（预设卡片另带 hlctx=副标题，用来区分同名预设）。
+  // 侧边栏组件每个页面都会加载，所以由它等页面内容渲染出来后滚动到文字位置并用黄色背景高亮。
+  // 高亮用 CSS Custom Highlight API，不改动 Streamlit 管理的 DOM 结构。
+  (function jumpToSearchHit() {
+    var params;
+    try { params = new URL(parent.location.href).searchParams; } catch (e) { return; }
+    var text = params.get("hl");
+    if (!text) return;
+    var context = params.get("hlctx") || "";
+    var HIGHLIGHT_NAME = "site-search-hit";
+    var HIGHLIGHT_BG = "#ffe066";
+    var HIGHLIGHT_FG = "#1f2937";
+    var started = Date.now();
+    var userScrolled = false;
+    ["wheel", "touchstart", "keydown"].forEach(function (type) {
+      parent.addEventListener(type, function () { userScrolled = true; }, { once: true, passive: true });
+    });
+
+    function isVisible(el) {
+      return !!el && el.getClientRects().length > 0;
+    }
+
+    // 标题 / 折叠卡片标题最优先，其次是预设卡片，按钮（如分类选择器）上的同名文字只作兜底
+    function priority(el, inFrame) {
+      if (el.closest("h1, h2, h3, h4, h5, h6, summary")) return 4;
+      if (inFrame) return 3;
+      if (el.closest("button, [role=tab], label")) return 1;
+      return 2;
+    }
+
+    function collect(doc, root, frame) {
+      var hits = [];
+      var walker = doc.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      for (var node = walker.nextNode(); node; node = walker.nextNode()) {
+        var at = node.nodeValue.indexOf(text);
+        var el = node.parentElement;
+        if (at === -1 || !isVisible(el)) continue;
+        var block = el.closest(".preset-card") || root;
+        var score = priority(el, !!frame);
+        if (context && block.textContent.indexOf(context) !== -1) score += 10;
+        hits.push({ doc: doc, node: node, at: at, el: el, frame: frame, score: score });
+      }
+      return hits;
+    }
+
+    function locate() {
+      var root = parent.document.querySelector('[data-testid="stMain"]') || parent.document.body;
+      var hits = collect(parent.document, root, null);
+      root.querySelectorAll("iframe").forEach(function (frame) {
+        try {
+          var doc = frame.contentDocument;
+          if (doc && doc.body && isVisible(frame)) hits = hits.concat(collect(doc, doc.body, frame));
+        } catch (e) {}
+      });
+      hits.sort(function (a, b) { return b.score - a.score; });
+      return hits[0] || null;
+    }
+
+    function paint(hit) {
+      var win = hit.doc.defaultView;
+      if (win.CSS && win.CSS.highlights && win.Highlight) {
+        if (!hit.doc.getElementById(HIGHLIGHT_NAME)) {
+          var style = hit.doc.createElement("style");
+          style.id = HIGHLIGHT_NAME;
+          style.textContent = "::highlight(" + HIGHLIGHT_NAME + ") { background-color: " + HIGHLIGHT_BG +
+            "; color: " + HIGHLIGHT_FG + "; }";
+          hit.doc.head.appendChild(style);
+        }
+        var range = hit.doc.createRange();
+        range.setStart(hit.node, hit.at);
+        range.setEnd(hit.node, hit.at + text.length);
+        win.CSS.highlights.set(HIGHLIGHT_NAME, new win.Highlight(range));
+      } else {
+        // 旧浏览器不支持 CSS Custom Highlight API：给文字所在元素整体加背景
+        hit.el.style.backgroundColor = HIGHLIGHT_BG;
+        hit.el.style.color = HIGHLIGHT_FG;
+      }
+    }
+
+    function reveal(hit, behavior) {
+      (hit.frame || hit.el).scrollIntoView({ block: "center", behavior: behavior });
+    }
+
+    function attempt() {
+      var hit = locate();
+      var waited = Date.now() - started;
+      // 刚加载时标题可能还没渲染出来，先别急着用按钮上的同名文字
+      if (!hit || (hit.score % 10 < 3 && waited < 2500)) {
+        if (waited < 12000) setTimeout(attempt, 300);
+        return;
+      }
+      paint(hit);
+      reveal(hit, "smooth");
+      // 上方的图片、预设卡片加载完会改变页面高度；用户没有自己滚动时再校正几次位置
+      [900, 2000, 4000].forEach(function (delay) {
+        setTimeout(function () {
+          if (!userScrolled && hit.node.isConnected) reveal(hit, "auto");
+        }, delay);
+      });
+    }
+    attempt();
+  })();
+"""
+
+
 def _component_html(page_css: str, page_body: str, page_js: str, values: dict[str, str]) -> str:
     html = _DOCUMENT_TEMPLATE
     replacements = [
@@ -728,7 +838,12 @@ def render_results(initial_query: str) -> None:
 
 def _sidebar_html() -> str:
     search_url = _page_url(SEARCH_PAGE, _pages())
-    return _component_html(_SIDEBAR_CSS, _SIDEBAR_BODY, _SIDEBAR_JS, {"__SEARCH_URL_JSON__": _json_value(search_url)})
+    return _component_html(
+        _SIDEBAR_CSS,
+        _SIDEBAR_BODY,
+        _SIDEBAR_JS + _JUMP_TO_HIT_JS,
+        {"__SEARCH_URL_JSON__": _json_value(search_url)},
+    )
 
 
 # - 结果列表展开时 iframe 会比所在容器高，要浮在下方侧边栏内容之上，否则会被盖住、点不到
