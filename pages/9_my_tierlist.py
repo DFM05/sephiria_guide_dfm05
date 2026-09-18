@@ -30,6 +30,7 @@ TIERLIST_HTML = (STATIC_DIR / "tierlist.html").read_text(encoding="utf-8").repla
 
 st.title("制作自己的武器排行榜")
 st.caption("赛菲莉娅 Sephiria / 拖拽武器到各等级，制作属于你的排行榜")
+st.info("💡 推荐电脑端访问，拖拽体验更佳")
 show_last_updated(STATIC_DIR / "weapon_icons")
 
 st.markdown(

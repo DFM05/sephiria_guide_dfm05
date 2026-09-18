@@ -135,23 +135,32 @@ body {
   white-space: nowrap;
   color: var(--fg);
 }
+.main-layout {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+#tiers {
+  flex: 1;
+  min-width: 0;
+}
 .pool-section {
-  margin-top: 16px;
+  flex: 0 0 300px;
   border: 1px solid var(--row-border);
   border-radius: 8px;
   padding: 10px;
   background: var(--pool-bg);
+  position: sticky;
+  top: 0;
 }
 .pool-header {
   display: flex;
+  flex-direction: column;
   gap: 8px;
-  flex-wrap: wrap;
-  align-items: center;
   margin-bottom: 10px;
 }
 .pool-header input {
-  flex: 1;
-  min-width: 160px;
+  width: 100%;
   padding: 6px 10px;
   border-radius: 6px;
   border: 1px solid var(--card-border);
@@ -209,13 +218,15 @@ body {
     <button id="reset-btn">重置</button>
     <span style="color:var(--muted);font-size:12px;">拖拽武器到等级行；点击等级名可编辑；悬停等级名显示删除按钮</span>
   </div>
-  <div id="tiers"></div>
-  <div class="pool-section">
-    <div class="pool-header">
-      <input id="search" placeholder="搜索武器名称...">
-      <div class="cat-tabs" id="cat-tabs"></div>
+  <div class="main-layout">
+    <div id="tiers"></div>
+    <div class="pool-section">
+      <div class="pool-header">
+        <input id="search" placeholder="搜索武器名称...">
+        <div class="cat-tabs" id="cat-tabs"></div>
+      </div>
+      <div class="pool-drop" id="pool"></div>
     </div>
-    <div class="pool-drop" id="pool"></div>
   </div>
 </div>
 
