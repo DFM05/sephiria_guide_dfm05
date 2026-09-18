@@ -6,3 +6,4 @@ __pycache__/
 .uv-cache/
 cache/pdf_pages/
 static/
+.trae/
