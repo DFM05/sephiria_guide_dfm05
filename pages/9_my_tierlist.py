@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 
 import streamlit as st
@@ -7,7 +8,12 @@ from wiki_ui import show_last_updated
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
 STATIC_DIR = ROOT_DIR / "static"
-TIERLIST_HTML = (STATIC_DIR / "tierlist.html").read_text(encoding="utf-8")
+WEAPON_DATA = json.loads((STATIC_DIR / "weapon_list.json").read_text(encoding="utf-8"))
+TIERLIST_HTML = (STATIC_DIR / "tierlist.html").read_text(encoding="utf-8").replace(
+    "<script>",
+    f"<script>\nwindow.WEAPON_DATA = {json.dumps(WEAPON_DATA, ensure_ascii=False)};",
+    1,
+)
 
 
 st.title("制作自己的武器排行榜")

@@ -241,9 +241,22 @@ let tiers = [];
 let placed = new Set(); // weapon ids placed in tiers
 let activeCategory = "全部";
 
-async function loadWeapons() {
-  const res = await fetch("/app/static/weapon_list.json");
-  weapons = await res.json();
+// static base is probed at runtime: Streamlit Cloud uses /static/,
+// local `streamlit run` uses /app/static/. WEAPON_DATA is injected by
+// pages/9_my_tierlist.py so the list itself never depends on fetch.
+let STATIC_BASE = "/static/";
+async function probeStaticBase() {
+  const candidates = ["/static/", "/app/static/"];
+  for (const base of candidates) {
+    try {
+      const r = await fetch(base + "weapon_list.json", { cache: "no-store" });
+      const ct = r.headers.get("content-type") || "";
+      if (r.ok && ct.includes("json")) { STATIC_BASE = base; return; }
+    } catch (e) {}
+  }
+}
+function loadWeapons() {
+  weapons = window.WEAPON_DATA || [];
   initCategories();
   renderPool();
 }
@@ -353,7 +366,7 @@ function makeWeaponCard(id) {
   card.className = "weapon";
   card.draggable = true;
   card.dataset.id = id;
-  card.innerHTML = `<img src="${w.icon}" alt="${w.name}"><div class="wname">${w.name}</div>`;
+  card.innerHTML = `<img src="${STATIC_BASE}${w.icon}" alt="${w.name}"><div class="wname">${w.name}</div>`;
   card.ondragstart = (e) => {
     e.dataTransfer.setData("text/plain", id);
     e.dataTransfer.effectAllowed = "move";
@@ -438,7 +451,8 @@ new ResizeObserver(notifyResize).observe(document.body);
 
 // init
 tiers = JSON.parse(JSON.stringify(DEFAULT_TIERS));
-loadWeapons().then(() => {
+probeStaticBase().then(() => {
+  loadWeapons();
   renderTiers();
   renderPool();
 });
