@@ -366,7 +366,7 @@ function makeWeaponCard(id) {
   card.className = "weapon";
   card.draggable = true;
   card.dataset.id = id;
-  card.innerHTML = `<img src="${STATIC_BASE}${w.icon}" alt="${w.name}"><div class="wname">${w.name}</div>`;
+  card.innerHTML = `<img src="${w.icon}" alt="${w.name}"><div class="wname">${w.name}</div>`;
   card.ondragstart = (e) => {
     e.dataTransfer.setData("text/plain", id);
     e.dataTransfer.effectAllowed = "move";
