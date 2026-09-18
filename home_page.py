@@ -138,7 +138,7 @@ def main() -> None:
         """
         <a class="update-banner" href="/changelog" target="_self">
         <span class="banner-badge">公告</span>
-        <span class="banner-text">2026-09-13：新分区「面板属性详解」上线，逐项解析属性与来源</span>
+        <span class="banner-text">2026-09-18：新功能「制作自己的武器排行榜」上线，拖拽武器自定义梯度</span>
         <span class="banner-go">查看更新公告 →</span>
         </a>
         """,

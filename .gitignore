@@ -5,5 +5,8 @@ __pycache__/
 .streamlit/secrets.toml
 .uv-cache/
 cache/pdf_pages/
-static/
+static/*
+!static/weapon_icons/
+!static/weapon_list.json
+!static/tierlist.html
 .trae/

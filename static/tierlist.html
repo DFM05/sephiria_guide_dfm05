@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>赛菲莉娅武器排行榜制作器</title>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<style>
+:root {
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #666;
+  --row-bg: #f5f5f5;
+  --row-border: #ddd;
+  --pool-bg: #f0f0f0;
+  --card-bg: #fff;
+  --card-border: #ccc;
+  --btn-bg: #e8e8e8;
+  --btn-fg: #333;
+  --accent: #4a90d9;
+}
+html.dark {
+  --bg: #0e1117;
+  --fg: #e6e6e6;
+  --muted: #999;
+  --row-bg: #1c2028;
+  --row-border: #333;
+  --pool-bg: #161920;
+  --card-bg: #1c2028;
+  --card-border: #3a3f4a;
+  --btn-bg: #2a2f3a;
+  --btn-fg: #e6e6e6;
+  --accent: #5aa0e9;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 12px;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, "Microsoft YaHei", sans-serif;
+  font-size: 14px;
+}
+.toolbar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.toolbar button {
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  border: 1px solid var(--card-border);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.toolbar button:hover { opacity: 0.85; }
+.toolbar .primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+.tier-row {
+  display: flex;
+  align-items: stretch;
+  min-height: 90px;
+  border: 1px solid var(--row-border);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.tier-label {
+  width: 100px;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  position: relative;
+  user-select: none;
+  padding: 0 6px;
+  text-align: center;
+}
+.tier-label .name { font-size: 16px; line-height: 1.2; word-break: keep-all; white-space: nowrap; }
+.tier-label .hint { font-size: 9px; opacity: 0.75; margin-top: 3px; }
+.tier-label .del-btn {
+  position: absolute;
+  top: 2px; right: 4px;
+  font-size: 14px;
+  background: rgba(0,0,0,0.3);
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.tier-label:hover .del-btn { display: flex; }
+.tier-drop {
+  flex: 1;
+  background: var(--row-bg);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px;
+  align-content: flex-start;
+  min-height: 90px;
+}
+.tier-drop.drag-over { background: rgba(74,144,217,0.15); }
+.weapon {
+  width: 72px;
+  text-align: center;
+  cursor: grab;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  padding: 4px;
+  user-select: none;
+}
+.weapon:active { cursor: grabbing; }
+.weapon img {
+  width: 48px; height: 48px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  pointer-events: none;
+}
+.weapon .wname {
+  font-size: 10px;
+  margin-top: 3px;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--fg);
+}
+.pool-section {
+  margin-top: 16px;
+  border: 1px solid var(--row-border);
+  border-radius: 8px;
+  padding: 10px;
+  background: var(--pool-bg);
+}
+.pool-header {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.pool-header input {
+  flex: 1;
+  min-width: 160px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  color: var(--fg);
+  font-size: 13px;
+}
+.cat-tabs { display: flex; gap: 4px; flex-wrap: wrap; }
+.cat-tab {
+  padding: 4px 10px;
+  border-radius: 14px;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  cursor: pointer;
+  font-size: 12px;
+  border: 1px solid var(--card-border);
+}
+.cat-tab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.pool-drop {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 100px;
+}
+.pool-drop.drag-over { background: rgba(74,144,217,0.15); }
+.tier-label input {
+  width: 88px;
+  text-align: center;
+  background: rgba(255,255,255,0.25);
+  border: none;
+  color: inherit;
+  font-size: 16px;
+  font-weight: bold;
+  outline: none;
+  border-radius: 4px;
+}
+.color-picker {
+  display: flex;
+  gap: 4px;
+  margin-top: 6px;
+}
+.color-dot {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid rgba(255,255,255,0.5);
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="toolbar">
+    <button id="add-tier">+ 添加等级</button>
+    <button id="export-btn" class="primary">导出截图</button>
+    <button id="reset-btn">重置</button>
+    <span style="color:var(--muted);font-size:12px;">拖拽武器到等级行；点击等级名可编辑；悬停等级名显示删除按钮</span>
+  </div>
+  <div id="tiers"></div>
+  <div class="pool-section">
+    <div class="pool-header">
+      <input id="search" placeholder="搜索武器名称...">
+      <div class="cat-tabs" id="cat-tabs"></div>
+    </div>
+    <div class="pool-drop" id="pool"></div>
+  </div>
+</div>
+
+<script>
+const DEFAULT_TIERS = [
+  { name: "幻神", color: "#d50000" },
+  { name: "金刚", color: "#ff6d00" },
+  { name: "超大杯上", color: "#ff9100" },
+  { name: "超大杯中", color: "#ffc400" },
+  { name: "超大杯下", color: "#ffea00" },
+  { name: "大杯上", color: "#c6ff00" },
+  { name: "大杯中", color: "#76ff03" },
+  { name: "大杯下", color: "#00e676" },
+  { name: "中杯上", color: "#1de9b6" },
+  { name: "中杯下", color: "#00b0ff" },
+  { name: "幻区", color: "#7c4dff" },
+  { name: "冰冷愤怒", color: "#536dfe" },
+];
+const COLORS = ["#ff4757","#ff7f50","#ffa502","#2ed573","#1e90ff","#5352ed","#a55eea","#747d8c","#2f3542"];
+
+let weapons = [];
+let tiers = [];
+let placed = new Set(); // weapon ids placed in tiers
+let activeCategory = "全部";
+
+async function loadWeapons() {
+  const res = await fetch("/app/static/weapon_list.json");
+  weapons = await res.json();
+  initCategories();
+  renderPool();
+}
+
+function initCategories() {
+  const cats = ["全部", ...new Set(weapons.map(w => w.category))];
+  const tabs = document.getElementById("cat-tabs");
+  tabs.innerHTML = "";
+  cats.forEach(c => {
+    const t = document.createElement("div");
+    t.className = "cat-tab" + (c === activeCategory ? " active" : "");
+    t.textContent = c;
+    t.onclick = () => { activeCategory = c; initCategories(); renderPool(); };
+    tabs.appendChild(t);
+  });
+}
+
+function renderTiers() {
+  const container = document.getElementById("tiers");
+  container.innerHTML = "";
+  tiers.forEach((tier, idx) => {
+    const row = document.createElement("div");
+    row.className = "tier-row";
+
+    const label = document.createElement("div");
+    label.className = "tier-label";
+    label.style.background = tier.color;
+    // pick text color by background luminance
+    const hex = tier.color.replace("#", "");
+    const r = parseInt(hex.slice(0, 2), 16);
+    const g = parseInt(hex.slice(2, 4), 16);
+    const b = parseInt(hex.slice(4, 6), 16);
+    const lum = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+    label.style.color = lum > 0.6 ? "#222" : "#fff";
+    label.innerHTML = `
+      <div class="del-btn" title="删除此等级">×</div>
+      <span class="name">${tier.name}</span>
+      <span class="hint">点击编辑</span>
+    `;
+    label.onclick = (e) => {
+      if (e.target.classList.contains("del-btn")) {
+        e.stopPropagation();
+        // return weapons in this tier to pool
+        const drops = row.querySelector(".tier-drop");
+        drops.querySelectorAll(".weapon").forEach(w => placed.delete(w.dataset.id));
+        tiers.splice(idx, 1);
+        renderTiers();
+        renderPool();
+        return;
+      }
+      const nameEl = label.querySelector(".name");
+      const input = document.createElement("input");
+      input.value = tier.name;
+      input.maxLength = 6;
+      nameEl.replaceWith(input);
+      input.focus();
+      input.select();
+      const commit = () => {
+        tier.name = input.value.trim() || "?";
+        renderTiers();
+      };
+      input.onblur = commit;
+      input.onkeydown = (e) => { if (e.key === "Enter") input.blur(); };
+    };
+    row.appendChild(label);
+
+    const drop = document.createElement("div");
+    drop.className = "tier-drop";
+    drop.dataset.tierIdx = idx;
+    drop.ondragover = (e) => { e.preventDefault(); drop.classList.add("drag-over"); };
+    drop.ondragleave = () => drop.classList.remove("drag-over");
+    drop.ondrop = (e) => {
+      e.preventDefault();
+      drop.classList.remove("drag-over");
+      const wid = e.dataTransfer.getData("text/plain");
+      if (!wid) return;
+      // remove from any previous tier
+      document.querySelectorAll(".tier-drop .weapon, .pool-drop .weapon").forEach(el => {
+        if (el.dataset.id === wid) el.remove();
+      });
+      drop.appendChild(makeWeaponCard(wid));
+      placed.add(wid);
+      renderPool();
+    };
+    row.appendChild(drop);
+    container.appendChild(row);
+  });
+  notifyResize();
+}
+
+function renderPool() {
+  const pool = document.getElementById("pool");
+  pool.innerHTML = "";
+  const q = document.getElementById("search").value.trim().toLowerCase();
+  weapons.forEach(w => {
+    if (placed.has(w.id)) return;
+    if (activeCategory !== "全部" && w.category !== activeCategory) return;
+    if (q && !w.name.toLowerCase().includes(q)) return;
+    pool.appendChild(makeWeaponCard(w.id));
+  });
+  notifyResize();
+}
+
+function makeWeaponCard(id) {
+  const w = weapons.find(x => x.id === id);
+  const card = document.createElement("div");
+  card.className = "weapon";
+  card.draggable = true;
+  card.dataset.id = id;
+  card.innerHTML = `<img src="${w.icon}" alt="${w.name}"><div class="wname">${w.name}</div>`;
+  card.ondragstart = (e) => {
+    e.dataTransfer.setData("text/plain", id);
+    e.dataTransfer.effectAllowed = "move";
+  };
+  card.ondragend = () => {
+    // after drop, refresh pool to remove placed weapons
+    renderPool();
+  };
+  return card;
+}
+
+document.getElementById("add-tier").onclick = () => {
+  const color = COLORS[tiers.length % COLORS.length];
+  tiers.push({ name: "?", color });
+  renderTiers();
+};
+
+document.getElementById("search").oninput = renderPool;
+
+document.getElementById("reset-btn").onclick = () => {
+  if (!confirm("确定要重置吗？所有排序将清空。")) return;
+  tiers = JSON.parse(JSON.stringify(DEFAULT_TIERS));
+  placed.clear();
+  renderTiers();
+  renderPool();
+};
+
+document.getElementById("export-btn").onclick = async () => {
+  const btn = document.getElementById("export-btn");
+  btn.textContent = "导出中...";
+  btn.disabled = true;
+  try {
+    const target = document.getElementById("app");
+    const canvas = await html2canvas(target, {
+      backgroundColor: getComputedStyle(document.documentElement).getPropertyValue("--bg").trim() || "#fff",
+      scale: 2,
+      useCORS: true,
+    });
+    const link = document.createElement("a");
+    link.download = "sephiria_weapon_tierlist.png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+  } catch (err) {
+    alert("导出失败：" + err.message);
+  }
+  btn.textContent = "导出截图";
+  btn.disabled = false;
+};
+
+// pool drop zone
+const pool = document.getElementById("pool");
+pool.ondragover = (e) => { e.preventDefault(); pool.classList.add("drag-over"); };
+pool.ondragleave = () => pool.classList.remove("drag-over");
+pool.ondrop = (e) => {
+  e.preventDefault();
+  pool.classList.remove("drag-over");
+  const wid = e.dataTransfer.getData("text/plain");
+  if (!wid) return;
+  document.querySelectorAll(".tier-drop .weapon").forEach(el => {
+    if (el.dataset.id === wid) el.remove();
+  });
+  placed.delete(wid);
+  renderPool();
+};
+
+// theme sync with Streamlit parent
+function syncTheme() {
+  const theme = parent.document.body.getAttribute("data-theme");
+  document.documentElement.classList.toggle("dark", theme === "dark");
+}
+syncTheme();
+new MutationObserver(syncTheme).observe(parent.document.body, { attributes: true, attributeFilter: ["data-theme"] });
+
+// notify parent to resize iframe
+function notifyResize() {
+  const h = document.documentElement.scrollHeight;
+  try {
+    window.parent.postMessage({ type: "streamlit:iframe:setSize", height: h }, "*");
+  } catch(e) {}
+}
+new ResizeObserver(notifyResize).observe(document.body);
+
+// init
+tiers = JSON.parse(JSON.stringify(DEFAULT_TIERS));
+loadWeapons().then(() => {
+  renderTiers();
+  renderPool();
+});
+</script>
+</body>
+</html>

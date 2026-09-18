@@ -1,0 +1,626 @@
+[
+  {
+    "id": "1001",
+    "name": "星光闪烁",
+    "category": "剑盾",
+    "icon": "/app/static/weapon_icons/1001.png"
+  },
+  {
+    "id": "1002",
+    "name": "冰冷愤怒",
+    "category": "剑盾",
+    "icon": "/app/static/weapon_icons/1002.png"
+  },
+  {
+    "id": "1003",
+    "name": "岩石剑",
+    "category": "剑盾",
+    "icon": "/app/static/weapon_icons/1003.png"
+  },
+  {
+    "id": "1004",
+    "name": "灰烬飘扬",
+    "category": "剑盾",
+    "icon": "/app/static/weapon_icons/1004.png"
+  },
+  {
+    "id": "1005",
+    "name": "无垠原野",
+    "category": "剑盾",
+    "icon": "/app/static/weapon_icons/1005.png"
+  },
+  {
+    "id": "1006",
+    "name": "收紧的恐惧",
+    "category": "剑盾",
+    "icon": "/app/static/weapon_icons/1006.png"
+  },
+  {
+    "id": "1007",
+    "name": "归来守护",
+    "category": "剑盾",
+    "icon": "/app/static/weapon_icons/1007.png"
+  },
+  {
+    "id": "1008",
+    "name": "胡萝卜剑",
+    "category": "剑盾",
+    "icon": "/app/static/weapon_icons/1008.png"
+  },
+  {
+    "id": "1009",
+    "name": "葱根剑",
+    "category": "剑盾",
+    "icon": "/app/static/weapon_icons/1009.png"
+  },
+  {
+    "id": "1010",
+    "name": "闪光的细剑",
+    "category": "剑盾",
+    "icon": "/app/static/weapon_icons/1010.png"
+  },
+  {
+    "id": "1011",
+    "name": "棱镜法杖",
+    "category": "剑盾",
+    "icon": "/app/static/weapon_icons/1011.png"
+  },
+  {
+    "id": "1012",
+    "name": "冰川之刃",
+    "category": "剑盾",
+    "icon": "/app/static/weapon_icons/1012.png"
+  },
+  {
+    "id": "1013",
+    "name": "暴风雪的前奏",
+    "category": "剑盾",
+    "icon": "/app/static/weapon_icons/1013.png"
+  },
+  {
+    "id": "1014",
+    "name": "霜针花园",
+    "category": "剑盾",
+    "icon": "/app/static/weapon_icons/1014.png"
+  },
+  {
+    "id": "1015",
+    "name": "弩炮剑",
+    "category": "剑盾",
+    "icon": "/app/static/weapon_icons/1015.png"
+  },
+  {
+    "id": "1016",
+    "name": "超导体",
+    "category": "剑盾",
+    "icon": "/app/static/weapon_icons/1016.png"
+  },
+  {
+    "id": "1017",
+    "name": "耀目的寂静",
+    "category": "剑盾",
+    "icon": "/app/static/weapon_icons/1017.png"
+  },
+  {
+    "id": "1018",
+    "name": "索利斯使命",
+    "category": "剑盾",
+    "icon": "/app/static/weapon_icons/1018.png"
+  },
+  {
+    "id": "1019",
+    "name": "食火獬豸",
+    "category": "剑盾",
+    "icon": "/app/static/weapon_icons/1019.png"
+  },
+  {
+    "id": "2001",
+    "name": "无视",
+    "category": "大剑",
+    "icon": "/app/static/weapon_icons/2001.png"
+  },
+  {
+    "id": "2002",
+    "name": "爱的眼神",
+    "category": "大剑",
+    "icon": "/app/static/weapon_icons/2002.png"
+  },
+  {
+    "id": "2003",
+    "name": "黑铁戟",
+    "category": "大剑",
+    "icon": "/app/static/weapon_icons/2003.png"
+  },
+  {
+    "id": "2004",
+    "name": "短暂自责",
+    "category": "大剑",
+    "icon": "/app/static/weapon_icons/2004.png"
+  },
+  {
+    "id": "2005",
+    "name": "红蛇碎击",
+    "category": "大剑",
+    "icon": "/app/static/weapon_icons/2005.png"
+  },
+  {
+    "id": "2006",
+    "name": "索利斯·西涅里斯",
+    "category": "大剑",
+    "icon": "/app/static/weapon_icons/2006.png"
+  },
+  {
+    "id": "2007",
+    "name": "荆棘棒",
+    "category": "大剑",
+    "icon": "/app/static/weapon_icons/2007.png"
+  },
+  {
+    "id": "2008",
+    "name": "顽皮的恶作剧",
+    "category": "大剑",
+    "icon": "/app/static/weapon_icons/2008.png"
+  },
+  {
+    "id": "2009",
+    "name": "吱嘎的脊椎",
+    "category": "大剑",
+    "icon": "/app/static/weapon_icons/2009.png"
+  },
+  {
+    "id": "2010",
+    "name": "放血机关剑",
+    "category": "大剑",
+    "icon": "/app/static/weapon_icons/2010.png"
+  },
+  {
+    "id": "2011",
+    "name": "万年寒霜巨剑",
+    "category": "大剑",
+    "icon": "/app/static/weapon_icons/2011.png"
+  },
+  {
+    "id": "2012",
+    "name": "冰柱剑",
+    "category": "大剑",
+    "icon": "/app/static/weapon_icons/2012.png"
+  },
+  {
+    "id": "2013",
+    "name": "驱魔的重剑",
+    "category": "大剑",
+    "icon": "/app/static/weapon_icons/2013.png"
+  },
+  {
+    "id": "2014",
+    "name": "深红漩涡",
+    "category": "大剑",
+    "icon": "/app/static/weapon_icons/2014.png"
+  },
+  {
+    "id": "2015",
+    "name": "裁判官",
+    "category": "大剑",
+    "icon": "/app/static/weapon_icons/2015.png"
+  },
+  {
+    "id": "2016",
+    "name": "电击大剑【E3G】",
+    "category": "大剑",
+    "icon": "/app/static/weapon_icons/2016.png"
+  },
+  {
+    "id": "2017",
+    "name": "电击大剑【S3G】",
+    "category": "大剑",
+    "icon": "/app/static/weapon_icons/2017.png"
+  },
+  {
+    "id": "2018",
+    "name": "幻术师的遗产",
+    "category": "大剑",
+    "icon": "/app/static/weapon_icons/2018.png"
+  },
+  {
+    "id": "2019",
+    "name": "太初形态",
+    "category": "大剑",
+    "icon": "/app/static/weapon_icons/2019.png"
+  },
+  {
+    "id": "2020",
+    "name": "拉扎里恩",
+    "category": "大剑",
+    "icon": "/app/static/weapon_icons/2020.png"
+  },
+  {
+    "id": "3001",
+    "name": "无光之刃",
+    "category": "匕首",
+    "icon": "/app/static/weapon_icons/3001.png"
+  },
+  {
+    "id": "3002",
+    "name": "绝对向往",
+    "category": "匕首",
+    "icon": "/app/static/weapon_icons/3002.png"
+  },
+  {
+    "id": "3003",
+    "name": "爬行的绝望",
+    "category": "匕首",
+    "icon": "/app/static/weapon_icons/3003.png"
+  },
+  {
+    "id": "3004",
+    "name": "艰难实验",
+    "category": "匕首",
+    "icon": "/app/static/weapon_icons/3004.png"
+  },
+  {
+    "id": "3005",
+    "name": "炙热之刃",
+    "category": "匕首",
+    "icon": "/app/static/weapon_icons/3005.png"
+  },
+  {
+    "id": "3006",
+    "name": "索利斯·因贝尔",
+    "category": "匕首",
+    "icon": "/app/static/weapon_icons/3006.png"
+  },
+  {
+    "id": "3007",
+    "name": "笼罩的阴云",
+    "category": "匕首",
+    "icon": "/app/static/weapon_icons/3007.png"
+  },
+  {
+    "id": "3008",
+    "name": "雷电之怒",
+    "category": "匕首",
+    "icon": "/app/static/weapon_icons/3008.png"
+  },
+  {
+    "id": "3009",
+    "name": "福寿草",
+    "category": "匕首",
+    "icon": "/app/static/weapon_icons/3009.png"
+  },
+  {
+    "id": "3010",
+    "name": "黑幕",
+    "category": "匕首",
+    "icon": "/app/static/weapon_icons/3010.png"
+  },
+  {
+    "id": "3011",
+    "name": "无尽沉浸",
+    "category": "匕首",
+    "icon": "/app/static/weapon_icons/3011.png"
+  },
+  {
+    "id": "3012",
+    "name": "模仿之书",
+    "category": "匕首",
+    "icon": "/app/static/weapon_icons/3012.png"
+  },
+  {
+    "id": "3013",
+    "name": "学院魔法剑-解放",
+    "category": "匕首",
+    "icon": "/app/static/weapon_icons/3013.png"
+  },
+  {
+    "id": "3014",
+    "name": "冷冻公鱼",
+    "category": "匕首",
+    "icon": "/app/static/weapon_icons/3014.png"
+  },
+  {
+    "id": "3015",
+    "name": "德里法",
+    "category": "匕首",
+    "icon": "/app/static/weapon_icons/3015.png"
+  },
+  {
+    "id": "4001",
+    "name": "重型弩：加速核心",
+    "category": "弩",
+    "icon": "/app/static/weapon_icons/4001.png"
+  },
+  {
+    "id": "4002",
+    "name": "弩：双子",
+    "category": "弩",
+    "icon": "/app/static/weapon_icons/4002.png"
+  },
+  {
+    "id": "4003",
+    "name": "赏金猎人",
+    "category": "弩",
+    "icon": "/app/static/weapon_icons/4003.png"
+  },
+  {
+    "id": "4004",
+    "name": "重型弩：火药合成",
+    "category": "弩",
+    "icon": "/app/static/weapon_icons/4004.png"
+  },
+  {
+    "id": "4005",
+    "name": "重型弩：爆炸装置",
+    "category": "弩",
+    "icon": "/app/static/weapon_icons/4005.png"
+  },
+  {
+    "id": "4006",
+    "name": "藤壶",
+    "category": "弩",
+    "icon": "/app/static/weapon_icons/4006.png"
+  },
+  {
+    "id": "4007",
+    "name": "重型弩：连发装置",
+    "category": "弩",
+    "icon": "/app/static/weapon_icons/4007.png"
+  },
+  {
+    "id": "4008",
+    "name": "重型弩：配备制导模块",
+    "category": "弩",
+    "icon": "/app/static/weapon_icons/4008.png"
+  },
+  {
+    "id": "4009",
+    "name": "迷你加农炮",
+    "category": "弩",
+    "icon": "/app/static/weapon_icons/4009.png"
+  },
+  {
+    "id": "4010",
+    "name": "索利斯·尤巴尔",
+    "category": "弩",
+    "icon": "/app/static/weapon_icons/4010.png"
+  },
+  {
+    "id": "4011",
+    "name": "重型弩：标记稳定化",
+    "category": "弩",
+    "icon": "/app/static/weapon_icons/4011.png"
+  },
+  {
+    "id": "4012",
+    "name": "重型弩：聚云者",
+    "category": "弩",
+    "icon": "/app/static/weapon_icons/4012.png"
+  },
+  {
+    "id": "4013",
+    "name": "迷你机枪",
+    "category": "弩",
+    "icon": "/app/static/weapon_icons/4013.png"
+  },
+  {
+    "id": "4014",
+    "name": "重型弩：速冻结晶",
+    "category": "弩",
+    "icon": "/app/static/weapon_icons/4014.png"
+  },
+  {
+    "id": "4015",
+    "name": "重型弩：扩展装置",
+    "category": "弩",
+    "icon": "/app/static/weapon_icons/4015.png"
+  },
+  {
+    "id": "4016",
+    "name": "卡里姆的形象",
+    "category": "弩",
+    "icon": "/app/static/weapon_icons/4016.png"
+  },
+  {
+    "id": "4017",
+    "name": "紫甲蜂弩",
+    "category": "弩",
+    "icon": "/app/static/weapon_icons/4017.png"
+  },
+  {
+    "id": "4018",
+    "name": "XRA-9",
+    "category": "弩",
+    "icon": "/app/static/weapon_icons/4018.png"
+  },
+  {
+    "id": "4019",
+    "name": "M-9200",
+    "category": "弩",
+    "icon": "/app/static/weapon_icons/4019.png"
+  },
+  {
+    "id": "5001",
+    "name": "名刀【村正】",
+    "category": "武士刀",
+    "icon": "/app/static/weapon_icons/5001.png"
+  },
+  {
+    "id": "5002",
+    "name": "怪刀-毫羽",
+    "category": "武士刀",
+    "icon": "/app/static/weapon_icons/5002.png"
+  },
+  {
+    "id": "5003",
+    "name": "炽焰赫尔巴努斯",
+    "category": "武士刀",
+    "icon": "/app/static/weapon_icons/5003.png"
+  },
+  {
+    "id": "5004",
+    "name": "海蒂",
+    "category": "武士刀",
+    "icon": "/app/static/weapon_icons/5004.png"
+  },
+  {
+    "id": "5005",
+    "name": "索利斯·叶克里",
+    "category": "武士刀",
+    "icon": "/app/static/weapon_icons/5005.png"
+  },
+  {
+    "id": "5006",
+    "name": "剑斩刀：飞柳",
+    "category": "武士刀",
+    "icon": "/app/static/weapon_icons/5006.png"
+  },
+  {
+    "id": "5007",
+    "name": "剑斩刀：破舞",
+    "category": "武士刀",
+    "icon": "/app/static/weapon_icons/5007.png"
+  },
+  {
+    "id": "5008",
+    "name": "优衣的短匕首",
+    "category": "武士刀",
+    "icon": "/app/static/weapon_icons/5008.png"
+  },
+  {
+    "id": "5009",
+    "name": "亚达玛的誓约",
+    "category": "武士刀",
+    "icon": "/app/static/weapon_icons/5009.png"
+  },
+  {
+    "id": "5010",
+    "name": "图书馆幽灵封印研究会第2型",
+    "category": "武士刀",
+    "icon": "/app/static/weapon_icons/5010.png"
+  },
+  {
+    "id": "5011",
+    "name": "永霜的沉默",
+    "category": "武士刀",
+    "icon": "/app/static/weapon_icons/5011.png"
+  },
+  {
+    "id": "5012",
+    "name": "纳斯特朗的碎片",
+    "category": "武士刀",
+    "icon": "/app/static/weapon_icons/5012.png"
+  },
+  {
+    "id": "5013",
+    "name": "电光一刻",
+    "category": "武士刀",
+    "icon": "/app/static/weapon_icons/5013.png"
+  },
+  {
+    "id": "5014",
+    "name": "苍云刀“阿尔格斯”",
+    "category": "武士刀",
+    "icon": "/app/static/weapon_icons/5014.png"
+  },
+  {
+    "id": "5015",
+    "name": "破甲刀",
+    "category": "武士刀",
+    "icon": "/app/static/weapon_icons/5015.png"
+  },
+  {
+    "id": "6001",
+    "name": "大力棍",
+    "category": "长棍",
+    "icon": "/app/static/weapon_icons/6001.png"
+  },
+  {
+    "id": "6002",
+    "name": "精灵融合杖伊洛妮卡",
+    "category": "长棍",
+    "icon": "/app/static/weapon_icons/6002.png"
+  },
+  {
+    "id": "6003",
+    "name": "海之锚",
+    "category": "长棍",
+    "icon": "/app/static/weapon_icons/6003.png"
+  },
+  {
+    "id": "6004",
+    "name": "无环锡杖",
+    "category": "长棍",
+    "icon": "/app/static/weapon_icons/6004.png"
+  },
+  {
+    "id": "6005",
+    "name": "圣海碎片",
+    "category": "长棍",
+    "icon": "/app/static/weapon_icons/6005.png"
+  },
+  {
+    "id": "6006",
+    "name": "突击枪卢阿施蕾娅",
+    "category": "长棍",
+    "icon": "/app/static/weapon_icons/6006.png"
+  },
+  {
+    "id": "6007",
+    "name": "突击枪普阿尔斯卡",
+    "category": "长棍",
+    "icon": "/app/static/weapon_icons/6007.png"
+  },
+  {
+    "id": "6008",
+    "name": "皮亚奥拉议事槌",
+    "category": "长棍",
+    "icon": "/app/static/weapon_icons/6008.png"
+  },
+  {
+    "id": "6009",
+    "name": "索利斯·布拉卡",
+    "category": "长棍",
+    "icon": "/app/static/weapon_icons/6009.png"
+  },
+  {
+    "id": "6010",
+    "name": "巫女的预言",
+    "category": "长棍",
+    "icon": "/app/static/weapon_icons/6010.png"
+  },
+  {
+    "id": "6011",
+    "name": "马拉斯皮纳",
+    "category": "长棍",
+    "icon": "/app/static/weapon_icons/6011.png"
+  },
+  {
+    "id": "6012",
+    "name": "比杜卡",
+    "category": "长棍",
+    "icon": "/app/static/weapon_icons/6012.png"
+  },
+  {
+    "id": "6013",
+    "name": "内波拉克斯",
+    "category": "长棍",
+    "icon": "/app/static/weapon_icons/6013.png"
+  },
+  {
+    "id": "6014",
+    "name": "神圣之壶",
+    "category": "长棍",
+    "icon": "/app/static/weapon_icons/6014.png"
+  },
+  {
+    "id": "6015",
+    "name": "无形之舞",
+    "category": "长棍",
+    "icon": "/app/static/weapon_icons/6015.png"
+  },
+  {
+    "id": "6016",
+    "name": "继承者",
+    "category": "长棍",
+    "icon": "/app/static/weapon_icons/6016.png"
+  }
+]

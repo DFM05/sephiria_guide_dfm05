@@ -28,6 +28,15 @@ st.title("不同版本武器排行榜")
 st.caption("赛菲莉娅 Sephiria / 不同版本武器排行榜")
 show_last_updated(RANKING_DIR)
 
+st.markdown("---")
+entry_col1, entry_col2 = st.columns([4, 1])
+with entry_col1:
+    st.markdown("### 想自己给武器排个名？")
+    st.caption("拖拽武器到各等级，制作并导出属于你的排行榜")
+with entry_col2:
+    st.link_button("🎨 开始制作", "/my_tierlist", use_container_width=True)
+st.markdown("---")
+
 version = st.segmented_control(
     "选择版本",
     options=[version_name for version_name, _ in VERSION_RANKINGS],
