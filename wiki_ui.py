@@ -6,7 +6,6 @@ from pathlib import Path
 from typing import Iterable
 
 import streamlit as st
-import streamlit.components.v1 as components
 
 
 def show_wiki_image(image_path: Path, width_ratio: float = 0.8) -> None:
@@ -299,20 +298,7 @@ _PRESET_CARD_TEMPLATE = """
     }
   });
 
-  function fit() {
-    try {
-      var h = Math.max(
-        document.documentElement.scrollHeight,
-        document.body ? document.body.scrollHeight : 0
-      );
-      if (window.frameElement && h > 0) {
-        window.frameElement.style.height = h + 'px';
-      }
-    } catch (e) {}
-  }
-  window.addEventListener('load', fit);
-  fit();
-  setTimeout(fit, 80);
+  // iframe height is auto-measured by st.iframe(height="content")
 </script>
 </body>
 </html>
@@ -396,8 +382,8 @@ def render_preset_card(
         author=author,
         version=version,
     )
-    # 初始高度只兜底,iframe 内 JS 会按内容精确自适应
-    components.html(card_html, height=300, scrolling=False)
+    # st.iframe with height="content" auto-measures the card height
+    st.iframe(card_html, height="content")
 
 
 def render_preset_grid(
