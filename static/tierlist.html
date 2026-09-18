@@ -135,6 +135,10 @@ body {
   white-space: nowrap;
   color: var(--fg);
 }
+/* Icon-only mode: bigger images, no name text */
+body.icons-only .weapon { width: 64px; padding: 3px; }
+body.icons-only .weapon img { width: 56px; height: 56px; }
+body.icons-only .weapon .wname { display: none; }
 .main-layout {
   display: flex;
   gap: 12px;
@@ -216,6 +220,7 @@ body {
     <button id="add-tier">+ 添加等级</button>
     <button id="export-btn" class="primary">导出截图</button>
     <button id="reset-btn">重置</button>
+    <button id="toggle-display">切换：图标+名称</button>
     <span style="color:var(--muted);font-size:12px;">拖拽武器到等级行；点击等级名可编辑；悬停等级名显示删除按钮</span>
   </div>
   <div class="main-layout">
@@ -403,6 +408,16 @@ document.getElementById("reset-btn").onclick = () => {
   placed.clear();
   renderTiers();
   renderPool();
+};
+
+document.getElementById("toggle-display").onclick = () => {
+  const btn = document.getElementById("toggle-display");
+  document.body.classList.toggle("icons-only");
+  if (document.body.classList.contains("icons-only")) {
+    btn.textContent = "切换：仅图标";
+  } else {
+    btn.textContent = "切换：图标+名称";
+  }
 };
 
 document.getElementById("export-btn").onclick = async () => {
